@@ -1,32 +1,16 @@
-import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "./firebase";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+
 
 function App() {
-  const [animals, setAnimals] = useState([]);
-
-  useEffect(() => {
-    async function getAnimals() {
-      const querySnapshot = await getDocs(collection(db, "animals"));
-
-      const animalsData = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-
-      setAnimals(animalsData);
-    }
-
-    getAnimals();
-  }, []);
+  
 
   return (
     <main>
-      <h1>Animal Rescue</h1>
-
-      {animals.map((animal) => (
-        <p key={animal.id}>{animal.name}</p>
-      ))}
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+      </Routes>
+  
     </main>
   );
 }
