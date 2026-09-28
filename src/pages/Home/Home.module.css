@@ -57,10 +57,9 @@
     border-radius: var(--radius-M);
     border: none;
 
-    padding:
-        clamp(8px, 1vw, 10px)
-        clamp(14px, 2vw, 20px);
-
+   padding:
+    clamp(10px, 1.5vw, 15px)
+    clamp(15px, 5vw, 75px);
     color: var(--color-text-white);
 
     font-size: clamp(16px, 1.5vw, var(--font-size-M));
@@ -95,15 +94,17 @@
 
 .containerMidSection {
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
 
-    gap: clamp(5px, 2vw, 3rem);
+    gap: clamp(5px, 2vw, 0.5rem);
 
-    margin: clamp(1rem, 4vw, 3rem) auto 0;
+    margin: clamp(-35px, -3vw, -20px) auto 0;
 
     padding-left: clamp(5px, 3vw, 3rem);
     padding-right: clamp(5px, 3vw, 3rem);
+
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -117,21 +118,23 @@
 
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
-
     text-align: center;
 
-    gap: clamp(3px, 1vw, 8px);
+    gap: clamp(3px, 1vw, 10px);
 
-    min-height: clamp(110px, 15vw, 200px);
+    min-height: clamp(90px, 10vw, 150px);
 
-    padding: clamp(5px, 2vw, 1rem);
+    padding: clamp(5px, 1vw, 12px);
 
     font-size: clamp(10px, 1.3vw, 16px);
 
     box-shadow: 1px 1px 20px 1px var(--color-shadow);
+
+    background-color: var(--color-background-color);
+
+    border-radius: var(--radius-M);
 }
 
 
@@ -192,41 +195,39 @@
 
     .containerHeaderText {
         background-color: rgba(240, 248, 255, 0.322);
-
         padding: 0.5rem;
-
         border-radius: var(--radius-S);
-
         margin: 0;
     }
 
-
     .containerHeaderHomeButton {
         margin-top: 1rem;
+        gap: 8px;
     }
 
+    .containerHeaderHomeButtonMeetDog,
+    .containerHeaderHomeButtonApply {
+        flex: 1;
+
+        padding: 10px 8px;
+
+        font-size: clamp(14px, 4vw, 17px);
+    }
 
     .containerHeaderHome {
         background-position: 60% center;
-
         padding: clamp(1.5rem, 6vw, 3rem);
     }
 
-
     .containerHeaderHome h1 {
         color: black;
-
         font-weight: var(--font-weight-M);
-
         font-size: clamp(35px, 10vw, 50px);
     }
 
-
     .containerHeaderHome p {
         color: black;
-
         font-weight: var(--font-weight-M);
-
         font-size: clamp(16px, 5vw, 20px);
     }
 }

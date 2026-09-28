@@ -39,8 +39,11 @@
 }
 
 
+/* IMAGES */
+
 .card img {
     width: 100%;
+
     height: clamp(120px, 15vw, 200px);
 
     object-fit: cover;
@@ -50,6 +53,8 @@
 }
 
 
+/* DOG NAME */
+
 .card h3 {
     font-size: clamp(14px, 2vw, 20px);
 
@@ -58,6 +63,8 @@
         clamp(3px, 1vw, 10px);
 }
 
+
+/* DOG INFORMATION */
 
 .card p {
     font-size: clamp(11px, 1.5vw, 16px);
@@ -69,12 +76,16 @@
 }
 
 
+/* STATUS BADGE */
+
 .card span {
     font-size: clamp(10px, 1.3vw, 16px);
 
     margin-left: clamp(3px, 1vw, 10px);
 }
 
+
+/* CAROUSEL BUTTONS */
 
 .carousel button {
     display: flex;
@@ -94,10 +105,53 @@
 
     cursor: pointer;
 
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
 }
+
 
 .carousel button:hover {
     background-color: var(--color-primary-hover);
+
     transform: scale(1.08);
+}
+
+
+
+/* ======================================
+    LARGE SCREENS
+====================================== */
+
+@media (min-width: 1000px) {
+
+    .card img {
+        height: clamp(200px, 18vw, 280px);
+        object-position: center;
+    }
+}
+
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 768px) {
+
+    .cards {
+        gap: 5px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card img {
+        height: clamp(100px, 26vw, 140px);
+        object-position: center;
+    }
+
+    .carousel {
+        gap: 5px;
+    }
 }
