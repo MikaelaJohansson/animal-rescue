@@ -1,0 +1,103 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: clamp(4px, 1.5vw, 25px);
+
+    width: 100%;
+    max-width: 1600px;
+
+    margin: 0 auto;
+    margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+
+.cards {
+    display: flex;
+    flex-direction: row;
+
+    gap: clamp(5px, 1.5vw, 20px);
+
+    width: 100%;
+}
+
+
+.card {
+    flex: 1;
+    min-width: 0;
+
+    padding: clamp(10px, 1.5vw, 16px);
+
+    background-color: white;
+
+    border-radius: var(--radius-M);
+
+    box-shadow: 1px 1px 10px var(--color-shadow);
+
+    overflow: hidden;
+}
+
+
+.card img {
+    width: 100%;
+    height: clamp(120px, 15vw, 200px);
+
+    object-fit: cover;
+    object-position: center 15%;
+
+    border-radius: var(--radius-S);
+}
+
+
+.card h3 {
+    font-size: clamp(14px, 2vw, 20px);
+
+    margin:
+        clamp(5px, 1vw, 10px)
+        clamp(3px, 1vw, 10px);
+}
+
+
+.card p {
+    font-size: clamp(11px, 1.5vw, 16px);
+
+    margin:
+        0
+        clamp(3px, 1vw, 10px)
+        clamp(5px, 1vw, 10px);
+}
+
+
+.card span {
+    font-size: clamp(10px, 1.3vw, 16px);
+
+    margin-left: clamp(3px, 1vw, 10px);
+}
+
+
+.carousel button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: clamp(30px, 4vw, 40px);
+    height: clamp(35px, 4vw, 40px);
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: var(--color-primary);
+    color: var(--color-text-white);
+
+    font-size: clamp(18px, 2vw, 22px);
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.carousel button:hover {
+    background-color: var(--color-primary-hover);
+    transform: scale(1.08);
+}
