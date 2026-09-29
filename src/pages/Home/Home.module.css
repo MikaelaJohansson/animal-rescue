@@ -107,12 +107,6 @@
     z-index: 2;
 }
 
-
-
-/* ======================================
-   MID SECTION CARDS
-====================================== */
-
 .containerContent {
     min-width: 0;
 
@@ -124,15 +118,15 @@
 
     gap: clamp(3px, 1vw, 10px);
 
-    min-height: clamp(90px, 10vw, 150px);
+    min-height: clamp(90px, 15vw, 190px);
 
     padding: clamp(5px, 1vw, 12px);
 
     font-size: clamp(10px, 1.3vw, 16px);
 
-    box-shadow: 1px 1px 20px 1px var(--color-shadow);
+    box-shadow: 1px 1px 5px 1px var(--color-shadow-dark);
 
-    background-color: var(--color-background-color);
+    background-color: var(--color-background);
 
     border-radius: var(--radius-M);
 }
@@ -229,5 +223,9 @@
         color: black;
         font-weight: var(--font-weight-M);
         font-size: clamp(16px, 5vw, 20px);
+    }
+
+    .containerMidSection{
+        padding: 2rem;
     }
 }

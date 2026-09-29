@@ -1,4 +1,4 @@
-.carousel {
+.mainContainerCarousel {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,9 +27,9 @@
     flex: 1;
     min-width: 0;
 
-    padding: clamp(10px, 1.5vw, 16px);
+    padding-bottom: 1rem;
 
-    background-color: white;
+    background-color: var(--color-text-white);
 
     border-radius: var(--radius-M);
 
@@ -87,7 +87,7 @@
 
 /* CAROUSEL BUTTONS */
 
-.carousel button {
+.mainContainerCarousel button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,8 +110,7 @@
         background-color 0.2s ease;
 }
 
-
-.carousel button:hover {
+.mainContainerCarousel button:hover {
     background-color: var(--color-primary-hover);
 
     transform: scale(1.08);
@@ -142,16 +141,13 @@
         gap: 5px;
     }
 
-    .card {
-        padding: 15px;
-    }
-
     .card img {
         height: clamp(100px, 26vw, 140px);
         object-position: center;
     }
 
-    .carousel {
+    .mainContainerCarousel {
         gap: 5px;
+        padding: 0.5rem
     }
 }

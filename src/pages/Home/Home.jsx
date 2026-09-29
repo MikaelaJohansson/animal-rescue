@@ -2,11 +2,12 @@ import { db } from "../../firebase";
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { FaPaw, FaHeart, FaHouse, FaUserGroup } from "react-icons/fa6";
-import React from 'react'
 import styles from "./Home.module.css"
 import animalImages from "../../Data/animalImages";
 import homePage from "../../assets/homePage.jpg"
-import DogCard from "../../components/DogCard/DogCard";
+import Carousel from "../../components/Carousel/Carousel";
+import SupportSection from "./SupportSection/SupportSection"
+import PartnerOrganizations from "./PartnerOrganizations/PartnerOrganizations"
 
 export default function Home() {
 
@@ -69,8 +70,16 @@ export default function Home() {
                 <h1>Some of Our Dogs 🐾</h1>
             </div>
 
-            <DogCard animals={animals} />
+            <Carousel animals={animals} />
 
+        </section>
+
+        <section>
+            <SupportSection/>
+        </section>
+
+        <section>
+            <PartnerOrganizations/>
         </section>
      
       

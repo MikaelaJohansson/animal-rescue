@@ -1,0 +1,294 @@
+/* ======================================
+   MAIN SECTION
+====================================== */
+
+.mainContainerSupport {
+    width: 100%;
+
+    position: relative;
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    background-color: var(--color-backround-beige);
+
+    padding:
+        clamp(35px, 5vw, 70px)
+        clamp(25px, 5vw, 70px);
+}
+
+
+/* ======================================
+   MAIN LAYOUT
+====================================== */
+
+.topContent {
+    display: flex;
+    align-items: center;
+
+    gap: clamp(30px, 5vw, 80px);
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ======================================
+   DOG IMAGE
+====================================== */
+
+.dogImage {
+    width: clamp(280px, 32vw, 500px);
+    height: auto;
+    flex-shrink: 0;
+}
+
+
+/* ======================================
+   RIGHT CONTENT
+====================================== */
+
+.supportContent {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* Small heading */
+
+.supportContent h2 {
+    color: var(--color-primary);
+
+    font-size: clamp(12px, 1.2vw, 16px);
+
+    margin: 0 0 clamp(6px, 0.8vw, 10px) 0;
+}
+
+
+/* Main heading */
+
+.supportContent h1 {
+    font-size: clamp(28px, 3vw, 46px);
+
+    margin: 0 0 clamp(8px, 1vw, 12px) 0;
+}
+
+
+/* Introduction */
+
+.supportContent > p {
+    font-size: clamp(14px, 1.2vw, 18px);
+
+    max-width: 600px;
+
+    margin: 0 0 clamp(20px, 2vw, 30px) 0;
+}
+
+
+/* ======================================
+   CARDS CONTAINER
+====================================== */
+
+.containersupportCards {
+    display: flex;
+
+    gap: clamp(10px, 1.5vw, 20px);
+
+    width: 100%;
+}
+
+
+/* ======================================
+   CARD
+====================================== */
+
+.supportCards {
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--color-background);
+
+    padding: clamp(10px, 1.3vw, 16px);
+
+    border-radius: var(--radius-M);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ======================================
+   CARD HEADING
+====================================== */
+
+.supportCards h3 {
+    font-size: clamp(14px, 1.2vw, 18px);
+
+    margin: 0 0 8px 0;
+}
+
+
+/* ======================================
+   CARD TEXT
+====================================== */
+
+.supportCards p {
+    font-size: clamp(12px, 1vw, 15px);
+
+    margin: 0 0 12px 0;
+}
+
+
+/* ======================================
+   ICON
+====================================== */
+
+.icon {
+    color: var(--color-primary);
+
+    font-size: clamp(20px, 1.8vw, 25px);
+
+    position: relative;
+    top: 0.2rem;
+
+    margin-right: 8px;
+}
+
+
+/* ======================================
+   LINKS
+====================================== */
+
+.supportCards a {
+    display: inline-block;
+
+    color: var(--color-primary);
+
+    font-weight: 600;
+    text-decoration: none;
+
+    margin-top: auto;
+}
+
+
+.supportCards a:hover {
+    text-decoration: underline;
+}
+
+
+/* ======================================
+   DECORATIVE PAWS
+====================================== */
+
+/*
+    Tassarna är absolute.
+    Därför påverkar de INTE flex-layouten.
+*/
+
+.pawsTop {
+    position: absolute;
+
+    width: clamp(55px, 7vw, 100px);
+
+    top: clamp(15px, 12vw, 30%);
+    left: clamp(32%, 35vw, 33%);
+
+    z-index: 1;
+
+    opacity: 0.8;
+
+    pointer-events: none;
+}
+.pawsTopLeftTop{
+    position: absolute;
+
+    width: clamp(55px, 7vw, 100px);
+
+    top: clamp(15px, 2vw, 60px);
+    left: clamp(32%, 35vw, 40%);
+
+    z-index: 1;
+
+    opacity: 0.8;
+
+    pointer-events: none;
+}
+
+.pawsRight {
+    position: absolute;
+
+    width: clamp(70px, 8vw, 120px);
+
+    right: clamp(-10px, 1vw, 10px);
+    bottom: clamp(5px, 1vw, 15px);
+
+    z-index: 1;
+
+    opacity: 0.8;
+
+    pointer-events: none;
+}
+
+
+/* ======================================
+   TABLET
+====================================== */
+
+@media (max-width: 1000px) {
+
+    .topContent {
+        gap: clamp(20px, 3vw, 35px);
+    }
+
+    .dogImage {
+        width: clamp(230px, 32vw, 330px);
+    }
+
+    .pawsRight {
+        opacity: 0.5;
+    }
+}
+
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 768px) {
+
+    .topContent {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .dogImage {
+        width: clamp(250px, 75vw, 400px);
+    }
+
+
+    .supportContent {
+        width: 100%;
+        margin-right: 0.5rem;
+    }
+
+
+    .containersupportCards {
+        flex-direction: column;
+    }
+
+
+    .supportCards {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .pawsTop,
+    .pawsRight {
+        display: none;
+    }
+}

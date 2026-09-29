@@ -1,9 +1,9 @@
 import { useState } from "react";
-import styles from "./DogCard.module.css";
+import styles from "./Carousel.module.css";
 import animalImages from "../../Data/animalImages";
 import StatusBadge from "../StatusBadge/StatusBadge";
 
-export default function DogCard({ animals }) {
+export default function Carousel({ animals }) {
 
     const [startIndex, setStartIndex] = useState(0);
 
@@ -27,7 +27,7 @@ export default function DogCard({ animals }) {
 
 
     return (
-        <div className={styles.carousel}>
+        <div className={styles.mainContainerCarousel}>
 
             <button onClick={handlePrevious}>
                 ←
@@ -38,7 +38,7 @@ export default function DogCard({ animals }) {
 
                 {visibleAnimals.map((animal) => (
 
-                    <div className={styles.card}key={animal.id} >
+                    <div className={styles.card} key={animal.id} >
 
                         <img
                             src={animalImages[animal.image]}
