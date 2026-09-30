@@ -4,7 +4,6 @@ import { collection, getDocs } from "firebase/firestore";
 import { FaPaw, FaHeart, FaHouse, FaUserGroup } from "react-icons/fa6";
 import styles from "./Home.module.css"
 import animalImages from "../../Data/animalImages";
-import homePage from "../../assets/homePage.jpg"
 import Carousel from "../../components/Carousel/Carousel";
 import SupportSection from "./SupportSection/SupportSection"
 import PartnerOrganizations from "./PartnerOrganizations/PartnerOrganizations"
