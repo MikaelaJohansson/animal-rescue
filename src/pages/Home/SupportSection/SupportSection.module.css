@@ -10,7 +10,13 @@
 
     box-sizing: border-box;
 
-    background-color: var(--color-backround-beige);
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--color-backround-beige) 10%,
+        var(--color-backround-beige) 90%,
+        transparent 100%
+    );
 
     padding:
         clamp(35px, 5vw, 70px)
