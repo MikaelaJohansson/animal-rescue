@@ -21,7 +21,7 @@
 
 .containerPartnerOrganizationsText {
     position: relative;
-    top: 5rem;
+    top: 6.5rem;
 }
 
 
@@ -113,10 +113,10 @@
 .containerPartnerOrganizationsLink a {
     display: inline-block;
     color: var(--color-primary);
-    font-size: clamp(10px, 1.1vw, 16px);
-    font-weight: 600;
+    font-size: clamp(14px, 1.5vw, 17px);
+    font-weight: var(--font-weight-L);
     text-decoration: none;
-    margin-top: auto;
+    margin-top: 0.5rem;
 }
 
 

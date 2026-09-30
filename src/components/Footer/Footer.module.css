@@ -1,0 +1,166 @@
+/* ======================================
+   FOOTER
+====================================== */
+
+.mainContainerFooter {
+    width: 100%;
+    background-color: var(--color-sidebar);
+    color: var(--color-text-white);
+    font-family: var(--font-family-Arial);
+    padding: 1.5rem 2rem;
+    box-sizing: border-box;
+}
+
+
+/* ======================================
+   GRID
+====================================== */
+
+.containerFooter {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: start;
+    gap: clamp(20px, 4vw, 60px);
+}
+
+
+/* ======================================
+   LOGO / INFORMATION
+====================================== */
+
+.footerInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.footerLogo {
+    width: clamp(120px, 12vw, 160px);
+    height: auto;
+    display: block;
+    transform: translateY(-20px);
+}
+
+
+.footerInfo p {
+    max-width: 300px;
+    margin: -15px 0 0 0;
+    color: var(--color-cards-darkRed);
+    font-style: italic;
+}
+
+
+/* ======================================
+   HEADINGS
+====================================== */
+
+.containerFooter h3 {
+    margin: 0 0 1rem 0;
+    padding: 0;
+    text-decoration: underline;
+}
+
+
+/* ======================================
+   LISTS
+====================================== */
+
+.containerFooter ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.containerFooter li {
+    margin-bottom: 0.2rem;
+}
+
+
+/* ======================================
+   LINKS
+====================================== */
+
+.containerFooter a {
+    display: inline-block;
+    color: var(--color-text-white);
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.containerFooter a:visited {
+    color: var(--color-text-muted);
+}
+
+
+.containerFooter a:hover {
+    color: var(--color-text-white);
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+
+/* ======================================
+   DOG SKETCH
+====================================== */
+
+.containerFooterDogSketch {
+    border-left: 1px solid var(--color-border);
+    padding-left: clamp(20px, 3vw, 40px);
+}
+
+
+.containerFooterDogSketch img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    display: block;
+}
+
+
+/* ======================================
+   TABLET
+====================================== */
+
+@media (max-width: 768px) {
+
+    .containerFooter {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+
+    .containerFooterDogSketch {
+        border-left: none;
+        padding-left: 0;
+    }
+}
+
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 480px) {
+
+    .containerFooter {
+        grid-template-columns: 1fr;
+    }
+
+
+    .footerLogo {
+        width: 120px;
+        transform: none;
+    }
+
+
+    .footerInfo p {
+        margin-top: 0.5rem;
+    }
+}
