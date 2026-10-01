@@ -10,7 +10,7 @@ export default function Navbar() {
     <div className={styles.mainContainerNavbar}>
         
         <div>
-            <img src={animalRescueLogoBlack} alt="Logo" width={120} />
+            <img className={styles.mainContainerNavbarLogo} src={animalRescueLogoBlack} alt="Logo"/>
         </div>
 
         <div className={styles.mainContainerNavbarLinks}>

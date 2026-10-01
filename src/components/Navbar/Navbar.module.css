@@ -5,19 +5,38 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
+
+    padding: clamp(0.15rem, 0.4vw, 0.4rem)
+            clamp(0.4rem, 2vw, 2rem);
+
     background-color: var(--color-background-topbar);
+
     box-sizing: border-box;
+}
+
+
+/* Logo */
+
+.mainContainerNavbarLogo {
+    width: clamp(65px, 13vw, 180px);
+    height: auto;
+    display: block;
+    flex-shrink: 0;
 }
 
 
 /* Navigation links */
 
+.mainContainerNavbarLinks {
+    display: flex;
+    align-items: center;
+}
+
+
 .mainContainerNavbarLinks ul {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: clamp(0.3rem, 2.5vw, 2.5rem);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -27,11 +46,11 @@
 .mainContainerNavbarLinks a {
     color: var(--color-primary);
     font-family: var(--font-family-Arial);
+    font-size: clamp(0.52rem, 1.4vw, 1.15rem);
+    font-weight: var(--font-weight-M);
     text-decoration: none;
-    font-weight: var( --font-weight-M);
-    transition:
-        color 0.2s ease,
-        transform 0.2s ease;
+    white-space: nowrap;
+    transition: color 0.2s ease;
 }
 
 
@@ -42,6 +61,7 @@
 
 .mainContainerNavbarLinks a:hover {
     color: var(--color-primary-hover);
+
     text-decoration: underline;
 }
 
@@ -49,10 +69,15 @@
 /* Adoption button */
 
 .mainContainerNavbarButton {
+    flex-shrink: 0;
     background-color: var(--color-primary);
     border-radius: var(--radius-M);
-    padding: 0.5rem 1rem;
+
+    padding: clamp(0.2rem, 0.8vw, 0.65rem)
+             clamp(0.3rem, 1.5vw, 1.25rem);
+
     box-shadow: 1px 2px 1px rgb(209, 209, 209);
+
     transition: transform 0.2s ease;
 }
 
@@ -60,7 +85,9 @@
 .mainContainerNavbarButton a {
     color: var(--color-text-white);
     font-family: var(--font-family-Arial);
+    font-size: clamp(0.45rem, 1.2vw, 1rem);
     text-decoration: none;
+    white-space: nowrap;
 }
 
 
@@ -72,4 +99,12 @@
 .mainContainerNavbarButton:hover {
     transform: scale(1.02);
     cursor: pointer;
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+    .mainContainerNavbarButton {
+        padding-top: 0;
+    }
 }
