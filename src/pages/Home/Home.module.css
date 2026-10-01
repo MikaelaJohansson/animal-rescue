@@ -15,91 +15,74 @@
 
 .containerHeaderHome h1 {
     color: var(--color-text-white);
-
     font-size: clamp(45px, 6vw, var(--font-size-XXL));
     font-weight: var(--font-weight-S);
-
     margin: 0 0 clamp(15px, 2vw, 20px) 0;
 }
 
 
 .containerHeaderHome p {
     color: var(--color-text-white);
-
     font-family: var(--font-family-Arial);
     font-size: clamp(18px, 2vw, var(--font-size-M));
-
     margin-bottom: clamp(1.5rem, 3vw, 2rem);
 }
 
 
 
-/* ======================================
-   BUTTON CONTAINER
-====================================== */
+/* BUTTON CONTAINER */
 
 .containerHeaderHomeButton {
     display: flex;
-
     gap: clamp(5px, 1vw, 10px);
 }
 
 
 
-/* ======================================
-   BUTTONS
-====================================== */
+/* BUTTONS */
 
 .containerHeaderHomeButtonMeetDog,
 .containerHeaderHomeButtonApply {
     background-color: var(--color-primary);
-
     border-radius: var(--radius-M);
     border: none;
 
    padding:
     clamp(10px, 1.5vw, 15px)
     clamp(15px, 5vw, 75px);
-    color: var(--color-text-white);
-
     font-size: clamp(16px, 1.5vw, var(--font-size-M));
+    color: var(--color-text-white);
     font-weight: var(--font-weight-regular);
     font-family: var(--font-family-Arial);
 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-
     transition: transform 0.2s ease;
+    text-decoration: none;
 }
 
 
 .containerHeaderHomeButtonMeetDog:hover,
 .containerHeaderHomeButtonApply:hover {
     transform: scale(1.05);
-
     cursor: pointer;
 }
 
 
 .containerHeaderHomeButtonApply {
     background-color: var(--color-primary-light-button);
-
     color: var(--color-font-black);
 }
 
 
 
-/* ======================================
-   MID SECTION
-====================================== */
+/* MID SECTION */
 
 .containerMidSection {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
     gap: clamp(8px, 1.2vw, 16px);
-
     margin: clamp(-45px, -3vw, -25px) auto 0;
-
     padding-left: clamp(10px, 2vw, 24px);
     padding-right: clamp(10px, 2vw, 24px);
 
@@ -115,23 +98,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
 
     gap: clamp(5px, 0.7vw, 8px);
-
-    /* Lägre kort */
     min-height: clamp(85px, 11vw, 140px);
-
     padding: clamp(10px, 1.3vw, 18px);
-
     font-size: clamp(10px, 1.2vw, 16px);
-
     background-color: var(--color-background);
-
     border-radius: var(--radius-M);
 
-    /* Mer djup */
     box-shadow:
         0 8px 20px rgba(0, 0, 0, 0.14),
         0 2px 5px rgba(0, 0, 0, 0.08);
@@ -140,54 +115,44 @@
 
 .containerContent strong {
     font-size: clamp(11px, 1.4vw, 17px);
-
     margin: 0;
 }
 
 
 .containerContent p {
     margin: 0;
-
     line-height: 1.4;
 }
 
 
 
-/* ======================================
-   MID SECTION ICONS
-====================================== */
+/* MID SECTION ICONS */
 
 .icon {
     color: var(--color-primary);
-
     font-size: clamp(24px, 2.7vw, 36px);
-
     flex-shrink: 0;
-
     margin-bottom: clamp(2px, 0.4vw, 5px);
 }
 
 
 
-/* ======================================
-   DOG CAROUSEL SECTION
-====================================== */
+/* DOG CAROUSEL SECTION */
 
 .containerAllDogs {
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
-
     margin: clamp(1rem, 3vw, 2rem);
 }
 
 
 .containerAllDogs h1 {
     font-size: clamp(22px, 3vw, 32px);
-
     text-align: center;
+    font-family: var(--font-family-Arial);
+    color: var(--color-sidebar-hover);
 }
 
 
@@ -198,9 +163,7 @@
 
 
 
-/* ======================================
-   MOBILE
-====================================== */
+/* Media query MOBILE */
 
 @media (max-width: 768px) {
 
@@ -219,9 +182,7 @@
     .containerHeaderHomeButtonMeetDog,
     .containerHeaderHomeButtonApply {
         flex: 1;
-
         padding: 10px 8px;
-
         font-size: clamp(14px, 4vw, 17px);
     }
 

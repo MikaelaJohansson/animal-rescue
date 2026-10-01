@@ -36,27 +36,19 @@ export default function Footer() {
           <ul className={styles.footerList}>
 
             <li>
-              <Link className={styles.footerLink} to="/">
-                Home
-              </Link>
+              <Link className={styles.footerLink} to="/">Home</Link>
             </li>
 
             <li>
-              <Link className={styles.footerLink} to="/dogs">
-                Our Dogs
-              </Link>
+              <Link className={styles.footerLink} to="/dogs">Our Dogs</Link>
             </li>
 
             <li>
-              <Link className={styles.footerLink} to="/about">
-                About Us
-              </Link>
+              <Link className={styles.footerLink} to="/about">About Us</Link>
             </li>
 
             <li>
-              <Link className={styles.footerLink} to="/contact">
-                Contact
-              </Link>
+              <Link className={styles.footerLink} to="/contact">Contact</Link>
             </li>
 
           </ul>

@@ -1,0 +1,75 @@
+/* Navbar */
+
+.mainContainerNavbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: var(--color-background-topbar);
+    box-sizing: border-box;
+}
+
+
+/* Navigation links */
+
+.mainContainerNavbarLinks ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.mainContainerNavbarLinks a {
+    color: var(--color-primary);
+    font-family: var(--font-family-Arial);
+    text-decoration: none;
+    font-weight: var( --font-weight-M);
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.mainContainerNavbarLinks a:visited {
+    color: var(--color-primary);
+}
+
+
+.mainContainerNavbarLinks a:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}
+
+
+/* Adoption button */
+
+.mainContainerNavbarButton {
+    background-color: var(--color-primary);
+    border-radius: var(--radius-M);
+    padding: 0.5rem 1rem;
+    box-shadow: 1px 2px 1px rgb(209, 209, 209);
+    transition: transform 0.2s ease;
+}
+
+
+.mainContainerNavbarButton a {
+    color: var(--color-text-white);
+    font-family: var(--font-family-Arial);
+    text-decoration: none;
+}
+
+
+.mainContainerNavbarButton a:visited {
+    color: var(--color-text-white);
+}
+
+
+.mainContainerNavbarButton:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}

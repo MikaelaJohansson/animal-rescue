@@ -2,6 +2,7 @@ import { db } from "../../firebase";
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { FaPaw, FaHeart, FaHouse, FaUserGroup } from "react-icons/fa6";
+import {Link} from "react-router-dom"
 import styles from "./Home.module.css"
 import animalImages from "../../Data/animalImages";
 import Carousel from "../../components/Carousel/Carousel";
@@ -48,8 +49,8 @@ export default function Home() {
             </div>
            
            <div className={styles.containerHeaderHomeButton}>
-              <button className={styles.containerHeaderHomeButtonMeetDog}>Meet our dogs</button>
-              <button className={styles.containerHeaderHomeButtonApply}>Apply to adopt</button>
+                <Link to="/dogs" className={styles.containerHeaderHomeButtonMeetDog}>Dogs for Adoption</Link>
+                <Link to="/adoption-process" className={styles.containerHeaderHomeButtonApply} >How Adoption Works</Link>
            </div>
           
 

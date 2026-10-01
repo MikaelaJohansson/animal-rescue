@@ -1,6 +1,4 @@
-/* ======================================
-   MAIN CONTAINER
-====================================== */
+/* MAIN CONTAINER */
 
 .mainContainerPartnerOrganizations {
     width: 100%;
@@ -15,9 +13,7 @@
 }
 
 
-/* ======================================
-   TEXT
-====================================== */
+/* TEXT */
 
 .containerPartnerOrganizationsText {
     position: relative;
@@ -29,6 +25,10 @@
     color: var(--color-primary-hover);
 }
 
+.containerPartnerOrganizationsText h1 {
+    color: var(--color-sidebar);
+    font-family: var(--font-family-Arial);
+}
 
 .containerPartnerOrganizationsText p {
     font-family: var(--font-family-Arial);
@@ -36,9 +36,7 @@
 }
 
 
-/* ======================================
-   ORGANISATIONS CONTAINER
-====================================== */
+/*  ORGANISATIONS CONTAINER */
 
 .containerPartnerOrganizationsOrg {
     display: flex;
@@ -49,9 +47,7 @@
 }
 
 
-/* ======================================
-   ORGANISATION BOX
-====================================== */
+/* ORGANISATION BOX */
 
 .containerPartnerOrganizationsBox {
     background-color: var(--color-primary-light);
@@ -67,9 +63,7 @@
 }
 
 
-/* ======================================
-   ORGANISATION TEXT
-====================================== */
+/*  ORGANISATION TEXT */
 
 .containerPartnerOrganizationsLink {
     display: flex;
@@ -92,9 +86,7 @@
 }
 
 
-/* ======================================
-   ORGANISATION IMAGES
-====================================== */
+/* ORGANISATION IMAGES */
 
 .containerPartnerOrganizationsBox img {
     width: clamp(55px, 8vw, 120px);
@@ -106,9 +98,7 @@
 }
 
 
-/* ======================================
-   LINKS
-====================================== */
+/* LINKS */
 
 .containerPartnerOrganizationsLink a {
     display: inline-block;
@@ -125,9 +115,7 @@
 }
 
 
-/* ======================================
-   MOBILE
-====================================== */
+/* Media query MOBILE */
 
 @media (max-width: 860px) {
 
@@ -138,9 +126,6 @@
 
 
     .containerPartnerOrganizationsOrg {
-        position: relative;
-        right: 1rem;
-        top: -2rem;
         gap: 0.4rem;
     }
 
