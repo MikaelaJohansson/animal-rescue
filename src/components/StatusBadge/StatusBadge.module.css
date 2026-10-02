@@ -1,7 +1,7 @@
-.status{
+.status {
     padding: 3px;
     border-radius: var(--radius-M);
-    font-size: clamp(1rem, 3vw, 1rem);
+    font-size: clamp(9px, 1.5vw, 19px);
     white-space: nowrap;
     max-width: fit-content;
 }

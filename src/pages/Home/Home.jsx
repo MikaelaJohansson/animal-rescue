@@ -1,11 +1,10 @@
 import { db } from "../../firebase";
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { FaPaw, FaHeart, FaHouse, FaUserGroup } from "react-icons/fa6";
 import {Link} from "react-router-dom"
+import { FaPaw, FaHeart, FaHouse, FaUserGroup } from "react-icons/fa6";
 import styles from "./Home.module.css"
-import animalImages from "../../Data/animalImages";
-import Carousel from "../../components/Carousel/Carousel";
+import Carousel from "./Carousel/Carousel";
 import SupportSection from "./SupportSection/SupportSection"
 import PartnerOrganizations from "./PartnerOrganizations/PartnerOrganizations"
 

@@ -1,0 +1,60 @@
+.MainContainerDogCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 90%;
+    gap: clamp(10px, 2vw, 20px);
+    margin: clamp(10px, 3vw, 40px) auto;
+}
+
+
+.DogCardsContainer {
+    width: 90%;
+    justify-self: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-primary-light);
+    border-radius: var(--radius-M);
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 1px 1px 10px 1px rgb(202, 201, 201);
+}
+
+
+.DogCardsContainer:hover {
+    transform: scale(1.01);
+}
+
+
+.ContainerDogCardsImg {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.DogCardsContent {
+    padding: clamp(0.01rem, 1vw, 0.5rem);
+    padding-left: 1rem;
+    color: var(--color-dark-green-cards-text);
+    font-family: var(--font-family-Arial);
+}
+
+
+.DogCardsContent h2 {
+    font-size: clamp(12px, 1.5vw, 28px);
+}
+
+
+.DogCardsContent p {
+    font-size: clamp(9px, 1vw, 18px);
+}
+
+
+.DogCardsContentStatus {
+    margin-top: auto;
+    padding: 0 1rem 1rem 1rem;
+    align-self: flex-start;
+}

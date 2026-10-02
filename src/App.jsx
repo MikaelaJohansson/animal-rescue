@@ -22,6 +22,7 @@ function App() {
         <Route path="/adoption-process" element={<AdoptionProcess/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/dogs" element={<Dogs/>}/>
+        {/* <Route path="/dogs/:dogId" element={<DogDetails />} /> */}
       </Routes>
 
       <Footer/>

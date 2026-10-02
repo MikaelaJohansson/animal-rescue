@@ -32,11 +32,17 @@
 
 /* IMAGES */
 
+/* Images */
+
 .card img {
+    display: block;
+
     width: 100%;
-    height: clamp(120px, 15vw, 200px);
+    aspect-ratio: 1 / 1;
+
     object-fit: cover;
-    object-position: center 15%;
+    object-position: center;
+
     border-radius: var(--radius-S);
 }
 

@@ -9,7 +9,7 @@
     padding: clamp(0.15rem, 0.4vw, 0.4rem)
             clamp(0.4rem, 2vw, 2rem);
 
-    background-color: var(--color-background-topbar);
+    background-color: var(--color-primary-light);
 
     box-sizing: border-box;
 }
@@ -18,7 +18,7 @@
 /* Logo */
 
 .mainContainerNavbarLogo {
-    width: clamp(65px, 13vw, 180px);
+    width: clamp(65px, 13vw, 120px);
     height: auto;
     display: block;
     flex-shrink: 0;

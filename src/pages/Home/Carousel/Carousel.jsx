@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./Carousel.module.css";
-import animalImages from "../../Data/animalImages";
-import StatusBadge from "../StatusBadge/StatusBadge";
+import animalImages from "../../../Data/animalImages";
+import StatusBadge from "../../../components/StatusBadge/StatusBadge";
 
 export default function Carousel({ animals }) {
 
@@ -43,6 +43,7 @@ export default function Carousel({ animals }) {
                         <img
                             src={animalImages[animal.image]}
                             alt={animal.name}
+                            loading="lazy"
                         />
 
                         <h3>{animal.name}</h3>

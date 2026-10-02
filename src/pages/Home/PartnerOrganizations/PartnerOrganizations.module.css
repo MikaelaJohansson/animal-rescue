@@ -89,10 +89,14 @@
 /* ORGANISATION IMAGES */
 
 .containerPartnerOrganizationsBox img {
+    display: block;
+
     width: clamp(55px, 8vw, 120px);
-    height: clamp(55px, 8vw, 120px);
+    aspect-ratio: 1 / 1;
 
     object-fit: cover;
+    object-position: center;
+
     border-radius: var(--radius-M);
     flex-shrink: 0;
 }
