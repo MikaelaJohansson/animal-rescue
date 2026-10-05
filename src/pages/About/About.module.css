@@ -1,0 +1,381 @@
+.mainContainerAbout {
+    width: 100%;
+
+    background-color: var(--color-background);
+
+    color: var(--color-text);
+
+    box-sizing: border-box;
+}
+
+
+/* Hero */
+
+.aboutHero {
+    width: 100%;
+    min-height: clamp(450px, 65vh, 700px);
+
+    display: flex;
+    align-items: center;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.96) 0%,
+            rgba(255, 255, 255, 0.85) 35%,
+            rgba(255, 255, 255, 0.15) 65%,
+            rgba(255, 255, 255, 0) 100%
+        ),
+        url("../../assets/aboutImg.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding:
+        clamp(3rem, 8vw, 7rem)
+        clamp(2rem, 9vw, 9rem);
+
+    box-sizing: border-box;
+}
+
+
+.heroContent {
+    width: min(100%, 600px);
+}
+
+
+.smallHeading {
+    margin: 0 0 0.8rem;
+
+    color: var(--color-primary);
+
+    font-family: var(--font-family-Arial);
+    font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.heroContent h1 {
+    max-width: 650px;
+
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.05;
+}
+
+
+.heroText {
+    max-width: 570px;
+
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+
+    font-family: var(--font-family-Arial);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.7;
+}
+
+
+.heroButton {
+    display: inline-block;
+
+    padding:
+        clamp(0.8rem, 1.5vw, 1rem)
+        clamp(1.2rem, 2vw, 1.7rem);
+
+    border-radius: var(--radius-S);
+
+    background-color: var(--color-primary);
+    color: var(--color-text-white);
+
+    font-family: var(--font-family-Arial);
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.heroButton:hover {
+    background-color: var(--color-primary-hover);
+
+    transform: translateY(-2px);
+}
+
+
+/* Project information */
+
+.projectSection {
+    width: min(90%, 1200px);
+
+    margin: 0 auto;
+
+    padding:
+        clamp(4rem, 8vw, 7rem)
+        0;
+}
+
+
+.sectionHeading {
+    max-width: 750px;
+
+    margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+
+    text-align: center;
+}
+
+
+.sectionHeading h2 {
+    margin: 0 0 1rem;
+
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+
+.sectionHeading p {
+    margin: 0;
+
+    font-family: var(--font-family-Arial);
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    line-height: 1.7;
+}
+
+
+/* Flow */
+
+.flowGrid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+
+    gap: clamp(1rem, 2vw, 2rem);
+}
+
+
+.flowCard {
+    position: relative;
+
+    padding: clamp(1.5rem, 3vw, 2rem);
+
+    border-radius: var(--radius-M);
+
+    background-color: var(--color-text-white);
+
+    box-shadow: 1px 1px 10px var(--color-shadow);
+}
+
+
+.flowCard svg {
+    margin-bottom: 1.5rem;
+
+    color: var(--color-primary);
+
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+
+.flowCard span {
+    position: absolute;
+
+    top: 1.5rem;
+    right: 1.5rem;
+
+    color: var(--color-primary);
+
+    font-family: var(--font-family-Arial);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: bold;
+
+    opacity: 0.4;
+}
+
+
+.flowCard h3 {
+    margin: 0 0 0.8rem;
+
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+}
+
+
+.flowCard p {
+    margin: 0;
+
+    font-family: var(--font-family-Arial);
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    line-height: 1.6;
+}
+
+
+/* Technology */
+
+.technologySection {
+    width: 100%;
+
+    padding:
+        clamp(3rem, 7vw, 6rem)
+        clamp(2rem, 9vw, 9rem);
+
+    background-color: var(--color-primary);
+
+    box-sizing: border-box;
+}
+
+
+.technologyContent {
+    width: 100%;
+    max-width: 1200px;
+
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+
+    align-items: center;
+
+    gap: clamp(2rem, 5vw, 5rem);
+
+    margin: 0 auto;
+}
+
+
+.technologySection .smallHeading {
+    color: var(--color-text-white);
+
+    opacity: 0.8;
+}
+
+
+.technologySection h2 {
+    max-width: 500px;
+
+    margin: 0;
+
+    color: var(--color-text-white);
+
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+
+.technologyList {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: clamp(0.6rem, 1vw, 1rem);
+}
+
+
+.technologyList span {
+    padding:
+        clamp(0.5rem, 1vw, 0.7rem)
+        clamp(0.8rem, 1.5vw, 1.2rem);
+
+    border: 1px solid var(--color-text-white);
+    border-radius: 50px;
+
+    color: var(--color-text-white);
+
+    font-family: var(--font-family-Arial);
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+}
+
+
+/* Project links */
+
+.projectLinks {
+    width: min(90%, 750px);
+
+    margin: 0 auto;
+
+    padding:
+        clamp(4rem, 8vw, 7rem)
+        0;
+
+    text-align: center;
+}
+
+
+.projectLinks h2 {
+    margin: 0 0 1rem;
+
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+
+.projectLinks p {
+    margin:
+        0
+        auto
+        clamp(1.5rem, 3vw, 2rem);
+
+    font-family: var(--font-family-Arial);
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    line-height: 1.7;
+}
+
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 1rem;
+}
+
+
+.buttons a {
+    padding:
+        clamp(0.8rem, 1.5vw, 1rem)
+        clamp(1.2rem, 2vw, 1.7rem);
+
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-S);
+
+    background-color: var(--color-primary);
+    color: var(--color-text-white);
+
+    font-family: var(--font-family-Arial);
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.buttons a:hover {
+    background-color: var(--color-primary-hover);
+
+    transform: translateY(-2px);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .aboutHero {
+        min-height: 600px;
+
+        align-items: flex-start;
+
+        background-image:
+            linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0.97) 0%,
+                rgba(255, 255, 255, 0.85) 45%,
+                rgba(255, 255, 255, 0.05) 75%
+            ),
+            url("../../assets/aboutImg.png");
+
+        background-position: 65% center;
+    }
+
+}
