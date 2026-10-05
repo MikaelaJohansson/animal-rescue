@@ -1,0 +1,6 @@
+.DogsHeader {
+    width: 90%;
+    margin: 0 auto;
+    font-family: var( --font-family-Arial);
+    color: var(--color-dark-green-cards-text);
+}

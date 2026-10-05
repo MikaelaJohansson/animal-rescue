@@ -19,18 +19,48 @@
 }
 
 
+/* Dog card */
+
 .card {
     flex: 1;
     min-width: 0;
     padding-bottom: 1rem;
+
     background-color: var(--color-text-white);
+
+    border: 2px solid transparent;
     border-radius: var(--radius-M);
+
     box-shadow: 1px 1px 10px var(--color-shadow);
+
     overflow: hidden;
+
+    color: inherit;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
 }
 
 
-/* IMAGES */
+.card:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--color-primary);
+
+    box-shadow: 1px 4px 14px var(--color-shadow);
+}
+
+
+.card:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
 
 /* Images */
 
@@ -44,31 +74,51 @@
     object-position: center;
 
     border-radius: var(--radius-S);
+
+    transition: transform 0.2s ease;
 }
 
 
-/* DOG NAME */
+.card:hover img {
+    transform: scale(1.02);
+}
+
+
+/* Dog name */
 
 .card h3 {
     font-size: clamp(14px, 2vw, 20px);
+
     margin:
         clamp(5px, 1vw, 10px)
         clamp(3px, 1vw, 10px);
+
+    color: var(--color-text);
+
+    transition: color 0.2s ease;
 }
 
 
-/* DOG INFORMATION */
+.card:hover h3 {
+    color: var(--color-primary);
+}
+
+
+/* Dog information */
 
 .card p {
     font-size: clamp(11px, 1.5vw, 16px);
+
     margin:
         0
         clamp(3px, 1vw, 10px)
         clamp(5px, 1vw, 10px);
+
+    color: var(--color-text);
 }
 
 
-/* STATUS BADGE */
+/* Status badge */
 
 .card span {
     font-size: clamp(10px, 1.3vw, 16px);
@@ -76,7 +126,7 @@
 }
 
 
-/* CAROUSEL BUTTONS */
+/* Carousel buttons */
 
 .mainContainerCarousel button {
     display: flex;
@@ -88,15 +138,19 @@
 
     border: none;
     border-radius: 50%;
+
     background-color: var(--color-primary);
     color: var(--color-text-white);
+
     font-size: clamp(18px, 2vw, 22px);
+
     cursor: pointer;
 
     transition:
         transform 0.2s ease,
         background-color 0.2s ease;
 }
+
 
 .mainContainerCarousel button:hover {
     background-color: var(--color-primary-hover);
@@ -105,8 +159,7 @@
 }
 
 
-
-/* Media query  LARGE SCREENS */
+/* Media query large screens */
 
 @media (min-width: 1000px) {
 
@@ -114,10 +167,11 @@
         height: clamp(200px, 18vw, 280px);
         object-position: center;
     }
+
 }
 
 
-/* Media query MOBILE */
+/* Media query mobile */
 
 @media (max-width: 768px) {
 
@@ -132,6 +186,7 @@
 
     .mainContainerCarousel {
         gap: 5px;
-        padding: 0.5rem
+        padding: 0.5rem;
     }
+
 }

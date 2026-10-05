@@ -1,0 +1,485 @@
+.MainContainerAdoptionApplication {
+    width: 90%;
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    padding: clamp(30px, 5vw, 60px) 0;
+
+    font-family: var(--font-family-Arial);
+}
+
+
+/* Steps */
+
+.StepContainer {
+    display: flex;
+    align-items: flex-start;
+
+    width: 90%;
+
+    margin: 0 auto clamp(35px, 5vw, 55px);
+}
+
+
+.Step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: clamp(55px, 8vw, 90px);
+
+    gap: 8px;
+
+    text-align: center;
+
+    font-size: clamp(10px, 1vw, 14px);
+}
+
+
+.StepNumber,
+.ActiveStepNumber {
+    width: clamp(28px, 3vw, 34px);
+    height: clamp(28px, 3vw, 34px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+}
+
+
+.StepNumber {
+    background-color: #e4e4e4;
+
+    color: var(--color-text);
+}
+
+
+.ActiveStepNumber {
+    background-color: var(--color-primary);
+
+    color: var(--color-text-white);
+}
+
+
+.ActiveStepNumber svg {
+    width: 17px;
+    height: 17px;
+}
+
+
+.StepLine,
+.ActiveStepLine {
+    flex: 1;
+
+    height: 2px;
+
+    margin-top: clamp(14px, 1.5vw, 17px);
+}
+
+
+.StepLine {
+    background-color: #ddd;
+}
+
+
+.ActiveStepLine {
+    background-color: var(--color-primary);
+}
+
+
+/* Step content */
+
+.FormStep {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: clamp(20px, 3vw, 30px);
+}
+
+
+.StepHeading h1 {
+    margin: 0 0 8px;
+
+    font-size: clamp(26px, 4vw, 40px);
+}
+
+
+.StepHeading p {
+    max-width: 600px;
+
+    margin: 0;
+
+    line-height: 1.5;
+
+    color: var(--color-text);
+}
+
+
+.FormStep h2 {
+    margin: 10px 0 0;
+
+    font-size: clamp(19px, 2vw, 25px);
+}
+
+
+/* Selected dog */
+
+.SelectedDog {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.SelectedDogContent {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: var(--radius-M);
+}
+
+
+.SelectedDogContent img {
+    width: 55px;
+    height: 55px;
+
+    object-fit: cover;
+
+    border-radius: var(--radius-M);
+}
+
+
+/* Form */
+
+.FormGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: clamp(18px, 3vw, 30px);
+}
+
+
+.FormGrid > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+.FormStep label {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    font-weight: bold;
+
+    font-size: clamp(13px, 1.2vw, 16px);
+}
+
+
+.FormStep input,
+.FormStep select,
+.FormStep textarea {
+    width: 100%;
+
+    padding: clamp(10px, 1.5vw, 13px);
+
+    box-sizing: border-box;
+
+    background-color: white;
+
+    border: 1px solid #ccc;
+    border-radius: var(--radius-M);
+
+    font-family: var(--font-family-Arial);
+    font-size: 14px;
+}
+
+
+.FormStep textarea {
+    resize: vertical;
+}
+
+
+.FormStep input:focus,
+.FormStep select:focus,
+.FormStep textarea:focus {
+    outline: none;
+
+    border-color: var(--color-primary);
+}
+
+
+/* Checkboxes */
+
+.CheckboxLabel {
+    flex-direction: row !important;
+    align-items: center;
+
+    gap: 10px !important;
+
+    font-weight: normal !important;
+}
+
+
+.CheckboxLabel input {
+    width: 18px;
+    height: 18px;
+
+    accent-color: var(--color-primary);
+}
+
+
+/* Buttons */
+
+.StepButtons {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 15px;
+
+    margin-top: 10px;
+}
+
+
+.PrimaryButton,
+.SecondaryButton {
+    min-width: 135px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    box-sizing: border-box;
+
+    border-radius: var(--radius-M);
+
+    font-family: var(--font-family-Arial);
+    font-size: 15px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+.PrimaryButton {
+    background-color: var(--color-primary);
+
+    color: var(--color-text-white);
+
+    border: 1px solid var(--color-primary);
+}
+
+
+.PrimaryButton:hover {
+    background-color: var(--color-primary-hover);
+}
+
+
+.PrimaryButton:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+
+.SecondaryButton {
+    background-color: white;
+
+    color: var(--color-text);
+
+    border: 1px solid #ccc;
+}
+
+
+.SecondaryButton:hover {
+    border-color: var(--color-primary);
+}
+
+
+/* Confirmation */
+
+.ConfirmSection {
+    padding: clamp(15px, 2vw, 20px);
+
+    background-color: var(--color-primary-light);
+
+    border-radius: var(--radius-M);
+}
+
+
+.ConfirmSection h3 {
+    margin: 0 0 10px;
+}
+
+
+.ConfirmSection p {
+    margin: 5px 0;
+
+    line-height: 1.5;
+}
+
+
+/* Complete */
+
+.CompleteContainer {
+    min-height: clamp(500px, 70vh, 750px);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: clamp(50px, 8vw, 100px) 20px;
+
+    box-sizing: border-box;
+
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+
+    text-align: center;
+}
+
+
+.CompleteContent {
+    max-width: 650px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 15px;
+
+    font-family: var(--font-family-Arial);
+}
+
+
+.CompleteIcon {
+    width: clamp(70px, 10vw, 110px);
+    height: clamp(70px, 10vw, 110px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color-primary-light);
+
+    border-radius: 50%;
+
+    color: var(--color-primary);
+}
+
+
+.CompleteIcon svg {
+    width: 55%;
+    height: 55%;
+
+    stroke-width: 2.5;
+}
+
+
+.CompleteContent h1 {
+    margin: 5px 0 0;
+
+    font-size: clamp(28px, 4vw, 44px);
+}
+
+
+.CompleteContent p {
+    max-width: 600px;
+
+    margin: 0 0 10px;
+
+    font-size: clamp(14px, 1.5vw, 18px);
+
+    line-height: 1.5;
+}
+
+
+/* Message */
+
+.MessageContainer {
+    min-height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: var(--font-family-Arial);
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .MainContainerAdoptionApplication {
+        width: 90%;
+    }
+
+
+    .StepContainer {
+        width: 100%;
+    }
+
+
+    .Step {
+        min-width: 50px;
+    }
+
+
+    .Step span {
+        font-size: 9px;
+    }
+
+
+    .FormGrid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .StepButtons {
+        justify-content: space-between;
+    }
+
+
+    .PrimaryButton,
+    .SecondaryButton {
+        min-width: 110px;
+
+        padding: 10px 14px;
+
+        font-size: 13px;
+    }
+
+
+    .CompleteContainer {
+        min-height: 600px;
+
+        background-position: center bottom;
+    }
+
+}

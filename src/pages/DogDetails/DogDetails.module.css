@@ -1,0 +1,393 @@
+.MainContainerDogDetails {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: clamp(20px, 4vw, 50px) 0;
+}
+
+
+/* Breadcrumbs */
+
+.Breadcrumbs {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: clamp(20px, 3vw, 30px);
+
+    font-family: var(--font-family-Arial);
+    font-size: clamp(12px, 1vw, 14px);
+
+    color: var(--color-text);
+}
+
+
+.Breadcrumbs a {
+    color: var(--color-text);
+
+    text-decoration: none;
+}
+
+
+.Breadcrumbs a:hover {
+    color: var(--color-primary);
+
+    text-decoration: underline;
+}
+
+
+/* Dog information */
+
+.DogHeader {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: start;
+
+    gap: clamp(30px, 5vw, 60px);
+}
+
+
+.DogImageContainer {
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-M);
+}
+
+
+.DogImage {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.DogInformation {
+    display: flex;
+    flex-direction: column;
+
+    gap: clamp(20px, 3vw, 30px);
+}
+
+
+.NameContainer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+
+.NameContainer h1 {
+    margin: 0;
+
+    font-size: clamp(28px, 4vw, 45px);
+
+    color: var(--color-text);
+}
+
+
+/* Dog facts */
+
+.DogFacts {
+    display: flex;
+    flex-direction: column;
+
+    gap: clamp(14px, 2vw, 20px);
+
+    font-family: var(--font-family-Arial);
+}
+
+
+.DogFacts div {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+
+    align-items: center;
+
+    gap: clamp(10px, 1.5vw, 18px);
+}
+
+
+.DogFacts svg {
+    width: 21px;
+    height: 21px;
+
+    color: var(--color-primary);
+
+    stroke-width: 1.8;
+
+    flex-shrink: 0;
+}
+
+
+.DogFacts span {
+    font-size: clamp(13px, 1.2vw, 16px);
+
+    color: var(--color-text);
+}
+
+
+/* Adoption button */
+
+.AdoptionButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    padding: clamp(11px, 1.5vw, 14px);
+
+    box-sizing: border-box;
+
+    background-color: var(--color-primary);
+    color: var(--color-text-white);
+
+    border-radius: var(--radius-M);
+
+    font-family: var(--font-family-Arial);
+    font-size: clamp(13px, 1.2vw, 16px);
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.AdoptionButton:hover {
+    background-color: var(--color-primary-hover);
+
+    transform: scale(1.01);
+}
+
+
+/* Tabs */
+
+.Tabs {
+    display: flex;
+
+    width: 100%;
+
+    margin-top: clamp(35px, 5vw, 60px);
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+.Tabs button {
+    flex: 1;
+
+    padding: clamp(10px, 1.5vw, 14px);
+
+    background: none;
+
+    border: none;
+    border-bottom: 3px solid transparent;
+
+    font-family: var(--font-family-Arial);
+    font-size: clamp(12px, 1.2vw, 16px);
+
+    color: var(--color-text);
+
+    cursor: pointer;
+}
+
+
+.Tabs button:hover {
+    color: var(--color-primary);
+}
+
+
+.Tabs .ActiveTab {
+    border-bottom-color: var(--color-primary);
+
+    color: var(--color-primary);
+
+    font-weight: bold;
+}
+
+
+/* Tab content */
+
+.TabContent {
+    padding-top: clamp(25px, 4vw, 40px);
+}
+
+
+.AboutContent {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    align-items: start;
+
+    gap: clamp(30px, 5vw, 60px);
+}
+
+
+.AboutText,
+.SimpleTabContent {
+    font-family: var(--font-family-Arial);
+
+    line-height: 1.6;
+
+    color: var(--color-text);
+}
+
+
+.AboutText h2,
+.SimpleTabContent h2 {
+    margin-top: 0;
+
+    font-size: clamp(20px, 2vw, 28px);
+}
+
+
+.AboutText h3,
+.SimpleTabContent h3 {
+    margin-top: 25px;
+
+    font-size: clamp(16px, 1.5vw, 21px);
+}
+
+
+/* Adoption card */
+
+.AdoptionCard {
+    align-self: start;
+
+    padding: clamp(20px, 3vw, 30px);
+
+    background-color: var(--color-primary-light);
+
+    border-radius: var(--radius-M);
+
+    text-align: center;
+}
+
+
+.AdoptionIcon {
+    width: clamp(28px, 3vw, 38px);
+    height: clamp(28px, 3vw, 38px);
+
+    margin-bottom: 10px;
+
+    color: var(--color-primary);
+
+    stroke-width: 1.7;
+}
+
+
+.AdoptionCard h2 {
+    margin: 0 0 10px 0;
+
+    font-size: clamp(17px, 2vw, 22px);
+
+    color: var(--color-text);
+}
+
+
+.AdoptionCard p {
+    margin: 0 0 20px 0;
+
+    font-family: var(--font-family-Arial);
+    font-size: clamp(12px, 1.1vw, 15px);
+
+    line-height: 1.5;
+
+    color: var(--color-text);
+}
+
+
+/* Medical */
+
+.MedicalFacts {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.MedicalFacts div {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 100px;
+
+    padding: 15px;
+
+    background-color: var(--color-primary-light);
+
+    border-radius: var(--radius-M);
+}
+
+
+.MedicalFacts span {
+    font-size: clamp(12px, 1vw, 14px);
+
+    color: var(--color-primary);
+}
+
+
+.MedicalFacts strong {
+    margin-top: 5px;
+
+    font-size: clamp(13px, 1.2vw, 16px);
+
+    color: var(--color-text);
+}
+
+
+/* Message */
+
+.MessageContainer {
+    min-height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: var(--font-family-Arial);
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .DogHeader {
+        grid-template-columns: 1fr;
+    }
+
+
+    .AboutContent {
+        grid-template-columns: 1fr;
+    }
+
+
+    .Tabs {
+        overflow-x: auto;
+    }
+
+
+    .Tabs button {
+        min-width: max-content;
+    }
+
+}

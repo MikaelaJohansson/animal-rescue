@@ -1,12 +1,12 @@
 import { db } from "../../firebase";
 import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import {Link} from "react-router-dom"
+import { collection, onSnapshot } from "firebase/firestore";
+import { Link } from "react-router-dom";
 import { FaPaw, FaHeart, FaHouse, FaUserGroup } from "react-icons/fa6";
-import styles from "./Home.module.css"
+import styles from "./Home.module.css";
 import Carousel from "./Carousel/Carousel";
-import SupportSection from "./SupportSection/SupportSection"
-import PartnerOrganizations from "./PartnerOrganizations/PartnerOrganizations"
+import SupportSection from "./SupportSection/SupportSection";
+import PartnerOrganizations from "./PartnerOrganizations/PartnerOrganizations";
 
 export default function Home() {
 
@@ -15,75 +15,126 @@ export default function Home() {
 
     useEffect(() => {
 
-        async function getAnimals() {
+        const animalsCollection = collection(db, "animals");
 
-            const querySnapshot = await getDocs(collection(db, "animals"));
+        const unsubscribe = onSnapshot(
+            animalsCollection,
 
-            const animalsData = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }));
+            (querySnapshot) => {
 
-            setAnimals(animalsData);
+                const animalsData = querySnapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
 
-        }
+                setAnimals(animalsData);
 
-        getAnimals();
-        
+            },
+
+            (error) => {
+
+                console.error("Error loading dogs:", error);
+
+            }
+        );
+
+
+        return () => {
+            unsubscribe();
+        };
+
     }, []);
 
 
-  return (
-    <div className={styles.mainContainerHome}>
+    return (
+        <div className={styles.mainContainerHome}>
 
-        <header className={styles.containerHeaderHome}>
+            <header className={styles.containerHeaderHome}>
 
-            <div  className={styles.containerHeaderText}>
-                <h1>A safer life  <br /> for more Dogs</h1>
-                <p>
-                    We rescue, care for, and rehome dogs in need of a new home. <br /> 
-                    Together, we can make a difference
-                </p>
+                <div className={styles.containerHeaderText}>
 
-            </div>
-           
-           <div className={styles.containerHeaderHomeButton}>
-                <Link to="/dogs" className={styles.containerHeaderHomeButtonMeetDog}>Dogs for Adoption</Link>
-                <Link to="/adoption-process" className={styles.containerHeaderHomeButtonApply} >How Adoption Works</Link>
-           </div>
-          
+                    <h1>
+                        A safer life <br /> for more Dogs
+                    </h1>
 
-        </header>
-      
-       
-        <section  className={styles.containerMidSection}>
-            <div className={styles.containerContent}><FaPaw className={styles.icon}  /><strong>No-Kill Shelter</strong> Every life deserves a chance</div>
-            <div className={styles.containerContent}><FaHeart className={styles.icon}  /><strong>They Choose You Too</strong>Finding the right match goes both ways</div>
-            <div className={styles.containerContent}><FaHouse className={styles.icon}  /><strong>Always a Safe Return</strong>We’ll always welcome them back</div>
-            <div className={styles.containerContent}><FaUserGroup className={styles.icon} /><strong>Together We Make a Difference</strong> Every helping hand changes a life</div>
-        </section>
+                    <p>
+                        We rescue, care for, and rehome dogs in need of a new home. <br />
+                        Together, we can make a difference
+                    </p>
 
-        <section className={styles.containerAllDogs}>
+                </div>
 
-            <div>
-                <h1>Some of Our Dogs 🐾</h1>
-            </div>
 
-            <Carousel animals={animals} />
+                <div className={styles.containerHeaderHomeButton}>
 
-        </section>
+                    <Link
+                        to="/dogs"
+                        className={styles.containerHeaderHomeButtonMeetDog}
+                    >
+                        Dogs for Adoption
+                    </Link>
 
-        <section>
-            <SupportSection/>
-        </section>
+                    <Link
+                        to="/adoption-process"
+                        className={styles.containerHeaderHomeButtonApply}
+                    >
+                        How Adoption Works
+                    </Link>
 
-        <section>
-            <PartnerOrganizations/>
-        </section>
-     
-      
+                </div>
 
-    </div>
+            </header>
 
-  )
+
+            <section className={styles.containerMidSection}>
+
+                <div className={styles.containerContent}>
+                    <FaPaw className={styles.icon} />
+                    <strong>No-Kill Shelter</strong>
+                    Every life deserves a chance
+                </div>
+
+                <div className={styles.containerContent}>
+                    <FaHeart className={styles.icon} />
+                    <strong>They Choose You Too</strong>
+                    Finding the right match goes both ways
+                </div>
+
+                <div className={styles.containerContent}>
+                    <FaHouse className={styles.icon} />
+                    <strong>Always a Safe Return</strong>
+                    We’ll always welcome them back
+                </div>
+
+                <div className={styles.containerContent}>
+                    <FaUserGroup className={styles.icon} />
+                    <strong>Together We Make a Difference</strong>
+                    Every helping hand changes a life
+                </div>
+
+            </section>
+
+
+            <section className={styles.containerAllDogs}>
+
+                <div>
+                    <h1>Some of Our Dogs 🐾</h1>
+                </div>
+
+                <Carousel animals={animals} />
+
+            </section>
+
+
+            <section>
+                <SupportSection />
+            </section>
+
+
+            <section>
+                <PartnerOrganizations />
+            </section>
+
+        </div>
+    );
 }
