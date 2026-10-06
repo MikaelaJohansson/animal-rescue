@@ -16,9 +16,8 @@ Together, the two applications demonstrate a complete workflow where animals are
 
 **Live application:**
 
-PUBLIC_APP_URL
+href="https://animal-rescue-public.web.app"
 
-The application is ready for deployment. This URL will be updated after deployment.
 
 ---
 
