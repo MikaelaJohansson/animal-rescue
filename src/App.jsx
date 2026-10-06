@@ -27,30 +27,15 @@ function App() {
 
                     <Route path="/about" element={<About />} />
 
-                    <Route
-                        path="/adoption-process"
-                        element={<AdoptionProcess />}
-                    />
+                    <Route path="/adoption-process" element={<AdoptionProcess />} />
 
-                    <Route
-                        path="/contact"
-                        element={<Contact />}
-                    />
+                    <Route path="/contact" element={<Contact />}  />
 
-                    <Route
-                        path="/dogs"
-                        element={<Dogs />}
-                    />
+                    <Route path="/dogs"  element={<Dogs />} />
 
-                    <Route
-                        path="/dogs/:dogId"
-                        element={<DogDetails />}
-                    />
+                    <Route path="/dogs/:dogId"  element={<DogDetails />}  />
 
-                    <Route
-                        path="/dogs/:dogId/adopt"
-                        element={<AdoptionApplication />}
-                    />
+                    <Route  path="/dogs/:dogId/adopt"  element={<AdoptionApplication />}/>
 
                 </Routes>
 
