@@ -1,14 +1,13 @@
-import styles from "./Dogs.module.css";
 import { db } from "../../firebase";
 import { useEffect, useState } from "react";
 import { collection, onSnapshot } from "firebase/firestore";
+import styles from "./Dogs.module.css";
 import DogCards from "./DogCards/DogCards";
 import DogFilters from "./DogFilters/DogFilters";
 
 export default function Dogs() {
 
     const [animals, setAnimals] = useState([]);
-
     const [search, setSearch] = useState("");
     const [age, setAge] = useState("");
     const [gender, setGender] = useState("");
@@ -19,8 +18,7 @@ export default function Dogs() {
 
         const animalsCollection = collection(db, "animals");
 
-        const unsubscribe = onSnapshot(
-            animalsCollection,
+        const unsubscribe = onSnapshot( animalsCollection,
 
             (querySnapshot) => {
 
@@ -38,9 +36,7 @@ export default function Dogs() {
         );
 
 
-        return () => {
-            unsubscribe();
-        };
+        return () => {  unsubscribe(); };
 
     }, []);
 
@@ -56,33 +52,18 @@ export default function Dogs() {
 
 
         /* Filter by age */
-        let matchesAge = true;
-
-        if (age === "young") {
-            matchesAge = animal.age < 2;
-        }
-
-        if (age === "adult") {
-            matchesAge = animal.age >= 2 && animal.age <= 5;
-        }
-
-        if (age === "older") {
-            matchesAge = animal.age >= 6;
-        }
+        const matchesAge = age === "young" 
+        ? animal.age < 2 : age === "adult" 
+        ? animal.age >= 2 && animal.age <= 5: age === "older"
+        ? animal.age >= 6 : true;
 
 
         /* Filter by gender */
-        const matchesGender =
-            gender === "" || animal.gender === gender;
+        const matchesGender = gender === "" ? true : animal.gender === gender;
 
 
         /* Filter by status */
-        let matchesStatus =
-            status === "" || animal.status === status;
-
-        if (status === "On Hold") {
-            matchesStatus = animal.status === "Medical Hold";
-        }
+        const matchesStatus = status === "" ? true : status === "On Hold" ? animal.status === "Medical Hold" : animal.status === status;
 
 
         return (
@@ -98,12 +79,14 @@ export default function Dogs() {
         <div className={styles.MainContainerDogs}>
 
             <div className={styles.DogsHeader}>
+
                 <h1>Our Dogs</h1>
 
                 <p>
                     Here you can see all the dogs looking for a new home.
                     Filter and learn more about each dog.
                 </p>
+
             </div>
 
 

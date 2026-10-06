@@ -13,7 +13,6 @@ export default function Carousel({ animals }) {
         startIndex + 4
     );
 
-
     function handleNext() {
 
         if (startIndex + 4 < animals.length) {
@@ -21,7 +20,6 @@ export default function Carousel({ animals }) {
         }
 
     }
-
 
     function handlePrevious() {
 
@@ -33,12 +31,10 @@ export default function Carousel({ animals }) {
 
 
     return (
+
         <div className={styles.mainContainerCarousel}>
 
-            <button
-                type="button"
-                onClick={handlePrevious}
-            >
+            <button type="button" onClick={handlePrevious} >
                 ←
             </button>
 
@@ -47,9 +43,7 @@ export default function Carousel({ animals }) {
 
                 {visibleAnimals.map((animal) => (
 
-                    <Link
-                        to={`/dogs/${animal.id}`}
-                        className={styles.card}
+                    <Link to={`/dogs/${animal.id}`} className={styles.card}
                         key={animal.id}
                     >
 
@@ -59,17 +53,11 @@ export default function Carousel({ animals }) {
                             loading="lazy"
                         />
 
-                        <h3>
-                            {animal.name}
-                        </h3>
+                        <h3> {animal.name} </h3>
 
-                        <p>
-                            {animal.age} years • {animal.gender}
-                        </p>
+                        <p> {animal.age} years • {animal.gender}  </p>
 
-                        <StatusBadge
-                            status={animal.status}
-                        />
+                        <StatusBadge status={animal.status}  />
 
                     </Link>
 
@@ -78,13 +66,11 @@ export default function Carousel({ animals }) {
             </div>
 
 
-            <button
-                type="button"
-                onClick={handleNext}
-            >
+            <button  type="button"  onClick={handleNext}  >
                 →
             </button>
 
         </div>
+        
     );
 }

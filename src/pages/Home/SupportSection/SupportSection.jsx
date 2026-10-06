@@ -1,7 +1,7 @@
+import {FaHeart, FaHouse, FaUserGroup} from "react-icons/fa6";
 import styles from "./SupportSection.module.css";
 import dogImageHomePage from "../../../assets/HomeImg/dogImageHomePage.png";
 import dogPaw from "../../../assets/HomeImg/dogPaws.png";
-import {FaHeart, FaHouse, FaUserGroup} from "react-icons/fa6";
 
 
 export default function SupportSection() {
@@ -31,8 +31,8 @@ export default function SupportSection() {
                     <h1>How to Make a Difference</h1>
 
                     <p>
-                          There are many ways to support dogs in need
-                          and help more animals find loving homes.
+                        There are many ways to support dogs in need
+                        and help more animals find loving homes.
                     </p>
 
 
@@ -42,9 +42,7 @@ export default function SupportSection() {
 
                             <h3> <FaHeart className={styles.icon} /> Donate </h3>
 
-                            <p>
-                                Help provide food, medical care and a safe home.
-                            </p>
+                            <p> Help provide food, medical care and a safe home. </p>
 
                             <a
                                 href="https://hundstallet.se/stod-oss/"
@@ -81,9 +79,7 @@ export default function SupportSection() {
 
                             <h3> <FaUserGroup className={styles.icon} /> Volunteer </h3>
 
-                            <p>
-                                Your time and skills make a real difference.
-                            </p>
+                            <p>  Your time and skills make a real difference. </p>
 
                             <a
                                 href="https://hundstallet.se/engagera-dig/volontar/"

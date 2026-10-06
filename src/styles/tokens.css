@@ -60,32 +60,6 @@
 
 
   /* ======================================
-     CARDS COLORS
-  ====================================== */
-
-  --color-cards-darkGreen: rgb(37, 56, 47);
-  --color-cards-lightGreen: rgb(231, 241, 234);
-
-  --color-cards-darkRed: #860f1f;
-  --color-cards-lightRed: #f9e0e0;
-
-  --color-cards-darkBlue: #2473ea;
-  --color-cards-lightBlue: #eaf2fa;
-
-  --color-cards-darkOrange: #e2991b;
-  --color-cards-lightOrange: #fde5c5;
-
-  --color-cards-darkYellow: #c3c010;
-  --color-cards-lightYellow: #fdfdd6;
-
-  --color-cards-darkPurple: #7b3fa1;
-  --color-cards-lightPurple: #f1e5f7;
-
-  --color-cards-darkPink: #e65292;
-  --color-cards-lightPink: #fbe4ee;
-
-
-  /* ======================================
      STATUS BADGE COLORS
   ====================================== */
 
@@ -145,31 +119,6 @@
   --radius-L: 50%;
   --radius-Sidebar-expand: 14px;
 
-
-  /* ======================================
-     LAYOUT
-  ====================================== */
-
-  --sidebar-width: 250px;
-  --topbar-height: 64px;
-
-
-  /* ======================================
-     ICONS
-  ====================================== */
-
-  --icon-S: 25px;
-  --icon-M: 35px;
-  --icon-L: 45px;
-
-
-  /* ======================================
-     LOGO
-  ====================================== */
-
-  --logo-S: 140px;
-  --logo-M: 250px;
-  --logo-L: 300px;
 }
 
 

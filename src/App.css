@@ -1,2 +1,11 @@
+/* App layout */
 
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
+.mainContent {
+    flex: 1;
+}

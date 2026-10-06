@@ -1,0 +1,46 @@
+/* Adoption call to action */
+
+.adoptionCTA {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(3rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+    background-color: var(--color-primary);
+    color: var(--color-text-white);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.adoptionCTA svg {
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.adoptionCTA h2 {
+    margin: 0 0 0.8rem;
+    font-size: clamp(1.7rem, 4vw, 3rem);
+}
+
+.adoptionCTA p {
+    margin: 0 0 clamp(1.5rem, 3vw, 2rem);
+    font-family: var(--font-family-Arial);
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+}
+
+.adoptionCTA a {
+    padding: clamp(0.8rem, 1.5vw, 1rem) clamp(1.2rem, 2vw, 1.7rem);
+    border: 2px solid var(--color-text-white);
+    border-radius: var(--radius-S);
+    background-color: var(--color-text-white);
+    color: var(--color-primary);
+    font-family: var(--font-family-Arial);
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.adoptionCTA a:hover {
+    transform: scale(1.04);
+    background-color: var(--color-background);
+}

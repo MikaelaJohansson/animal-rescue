@@ -1,36 +1,35 @@
-import styles from "./AdoptionApplication.module.css";
-
 import { useEffect, useState } from "react";
-
 import { Link, useParams } from "react-router-dom";
-
-import {
-    addDoc,
-    collection,
-    doc,
-    onSnapshot,
-    serverTimestamp
-} from "firebase/firestore";
-
+import { addDoc, collection, doc, onSnapshot, serverTimestamp } from "firebase/firestore";
+import { LuCheck } from "react-icons/lu";
 import { db } from "../../firebase";
 
-import animalImages from "../../Data/animalImages";
-
+import styles from "./AdoptionApplication.module.css";
 import adoptionCompleteBackground from "../../assets/adoptionCompleteBackground.png";
-
-import { LuCheck, LuArrowLeft, LuArrowRight } from "react-icons/lu";
+import ApplicationSteps from "./ApplicationSteps/ApplicationSteps";
+import AboutYouStep from "./AboutYouStep/AboutYouStep";
+import YourHomeStep from "./YourHomeStep/YourHomeStep";
+import ExperienceStep from "./ExperienceStep/ExperienceStep";
+import ConfirmStep from "./ConfirmStep/ConfirmStep";
 
 
 export default function AdoptionApplication() {
 
+    /* Gets the selected dog id from the URL */
     const { dogId } = useParams();
 
+    /* Stores the selected dog and loading state */
     const [animal, setAnimal] = useState(null);
     const [loading, setLoading] = useState(true);
+
+    /* Stores the current application step */
     const [currentStep, setCurrentStep] = useState(1);
+
+    /* Stores the submission state */
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
+    /* Stores all information entered in the application */
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -45,8 +44,9 @@ export default function AdoptionApplication() {
         notes: "",
         informationCorrect: false
     });
+    
 
-
+    /* Gets the selected dog from Firestore and listens for changes */
     useEffect(() => {
 
         const docRef = doc(db, "animals", dogId);
@@ -75,19 +75,17 @@ export default function AdoptionApplication() {
             (error) => {
 
                 console.error("Error loading dog:", error);
-
                 setLoading(false);
+
             }
         );
 
-
-        return () => {
-            unsubscribe();
-        };
+        return () => { unsubscribe(); };
 
     }, [dogId]);
 
 
+    /* Updates the correct form value when an input changes */
     function handleChange(event) {
 
         const { name, value, type, checked } = event.target;
@@ -99,34 +97,29 @@ export default function AdoptionApplication() {
 
     }
 
-
+    /* Moves to the next application step */
     function nextStep() {
 
-        if (currentStep < 4) {
-            setCurrentStep(currentStep + 1);
-        }
+        if (currentStep < 4) {  setCurrentStep(currentStep + 1); }
 
     }
 
-
+    /* Moves back to the previous application step */
     function previousStep() {
 
-        if (currentStep > 1) {
-            setCurrentStep(currentStep - 1);
-        }
+        if (currentStep > 1) { setCurrentStep(currentStep - 1); }
 
     }
 
 
+    /* Creates the adoption application and admin notification */
     async function handleSubmit(event) {
 
         event.preventDefault();
 
-
         if (!animal || !formData.informationCorrect) {
             return;
         }
-
 
         if (animal.status !== "Available") {
 
@@ -137,9 +130,7 @@ export default function AdoptionApplication() {
             return;
         }
 
-
         const adminUserId = import.meta.env.VITE_ADMIN_USER_ID;
-
 
         if (!adminUserId) {
 
@@ -150,76 +141,50 @@ export default function AdoptionApplication() {
             return;
         }
 
-
         setIsSubmitting(true);
-
 
         try {
 
-            const applicantName =
-                `${formData.firstName} ${formData.lastName}`.trim();
-
+            const applicantName = `${formData.firstName} ${formData.lastName}`.trim();
 
             /* Create adoption application */
-
             const applicationDocumentReference = await addDoc(
                 collection(db, "adoptionApplications"),
                 {
                     animalId: animal.id,
                     animalImage: animal.image,
                     animalName: animal.name,
-
                     applicantName: applicantName,
-
                     email: formData.email,
                     phone: formData.phone,
-
                     experience: formData.experience,
-
                     hasGarden: formData.hasGarden,
                     hasOtherPets: formData.hasOtherPets,
-
                     householdMembers: formData.householdMembers,
                     housingType: formData.housingType,
-
                     notes: formData.notes,
-
                     workSituation: formData.workSituation,
-
                     status: "New",
-
                     dateApplied: serverTimestamp()
                 }
             );
 
-
             /* Create notification for Administrator */
-
             await addDoc(
                 collection(db, "notifications"),
                 {
                     applicationId: applicationDocumentReference.id,
-
                     animalId: animal.id,
-
                     createdAt: serverTimestamp(),
-
                     isRead: false,
-
-                    message:
-                        `${applicantName} has submitted an adoption application for ${animal.name}.`,
-
+                    message: `${applicantName} has submitted an adoption application for ${animal.name}.`,
                     title: "New adoption application",
-
                     type: "new_adoption_application",
-
                     userId: adminUserId
                 }
             );
 
-
             setIsSubmitted(true);
-
 
         } catch (error) {
 
@@ -237,6 +202,7 @@ export default function AdoptionApplication() {
     }
 
 
+    /* Shows loading state while the dog is being loaded */
     if (loading) {
 
         return (
@@ -248,6 +214,7 @@ export default function AdoptionApplication() {
     }
 
 
+    /* Shows a message if the dog does not exist */
     if (!animal) {
 
         return (
@@ -265,6 +232,7 @@ export default function AdoptionApplication() {
     }
 
 
+    /* Stops applications when the dog is no longer available */
     if (animal.status !== "Available" && !isSubmitted) {
 
         return (
@@ -288,15 +256,14 @@ export default function AdoptionApplication() {
     }
 
 
+    /* Shows the completed application page */
     if (isSubmitted) {
 
         return (
-
             <div
                 className={styles.CompleteContainer}
                 style={{
-                    backgroundImage:
-                        `url(${adoptionCompleteBackground})`
+                    backgroundImage: `url(${adoptionCompleteBackground})`
                 }}
             >
 
@@ -331,593 +298,70 @@ export default function AdoptionApplication() {
                 </div>
 
             </div>
-
         );
 
     }
 
 
     return (
-
         <div className={styles.MainContainerAdoptionApplication}>
 
-
-            <div className={styles.StepContainer}>
-
-                <div className={styles.Step}>
-
-                    <div
-                        className={
-                            currentStep >= 1
-                                ? styles.ActiveStepNumber
-                                : styles.StepNumber
-                        }
-                    >
-                        {currentStep > 1 ? <LuCheck /> : "1"}
-                    </div>
-
-                    <span>About You</span>
-
-                </div>
+            {/* Application progress */}
+            <ApplicationSteps currentStep={currentStep} />
 
 
-                <div
-                    className={
-                        currentStep > 1
-                            ? styles.ActiveStepLine
-                            : styles.StepLine
-                    }
-                />
-
-
-                <div className={styles.Step}>
-
-                    <div
-                        className={
-                            currentStep >= 2
-                                ? styles.ActiveStepNumber
-                                : styles.StepNumber
-                        }
-                    >
-                        {currentStep > 2 ? <LuCheck /> : "2"}
-                    </div>
-
-                    <span>Your Home</span>
-
-                </div>
-
-
-                <div
-                    className={
-                        currentStep > 2
-                            ? styles.ActiveStepLine
-                            : styles.StepLine
-                    }
-                />
-
-
-                <div className={styles.Step}>
-
-                    <div
-                        className={
-                            currentStep >= 3
-                                ? styles.ActiveStepNumber
-                                : styles.StepNumber
-                        }
-                    >
-                        {currentStep > 3 ? <LuCheck /> : "3"}
-                    </div>
-
-                    <span>Experience</span>
-
-                </div>
-
-
-                <div
-                    className={
-                        currentStep > 3
-                            ? styles.ActiveStepLine
-                            : styles.StepLine
-                    }
-                />
-
-
-                <div className={styles.Step}>
-
-                    <div
-                        className={
-                            currentStep >= 4
-                                ? styles.ActiveStepNumber
-                                : styles.StepNumber
-                        }
-                    >
-                        4
-                    </div>
-
-                    <span>Confirm</span>
-
-                </div>
-
-            </div>
-
-
+            {/* Step 1 - About You */}
             {currentStep === 1 && (
 
-                <div className={styles.FormStep}>
-
-                    <div className={styles.StepHeading}>
-
-                        <h1>Adoption Application</h1>
-
-                        <p>
-                            Tell us about yourself, your home and
-                            your experience with dogs. We use the
-                            information to find the right match.
-                        </p>
-
-                    </div>
-
-
-                    <div className={styles.SelectedDog}>
-
-                        <span>Dog you are applying for</span>
-
-                        <div className={styles.SelectedDogContent}>
-
-                            <img
-                                src={animalImages[animal.image]}
-                                alt={animal.name}
-                            />
-
-                            <strong>
-                                {animal.name} – {animal.age} years, {animal.gender}
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-
-                    <h2>Basic Information</h2>
-
-
-                    <div className={styles.FormGrid}>
-
-                        <label>
-
-                            First Name *
-
-                            <input
-                                type="text"
-                                name="firstName"
-                                value={formData.firstName}
-                                onChange={handleChange}
-                                required
-                            />
-
-                        </label>
-
-
-                        <label>
-
-                            Last Name *
-
-                            <input
-                                type="text"
-                                name="lastName"
-                                value={formData.lastName}
-                                onChange={handleChange}
-                                required
-                            />
-
-                        </label>
-
-
-                        <label>
-
-                            Email *
-
-                            <input
-                                type="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                            />
-
-                        </label>
-
-
-                        <label>
-
-                            Phone *
-
-                            <input
-                                type="tel"
-                                name="phone"
-                                value={formData.phone}
-                                onChange={handleChange}
-                                required
-                            />
-
-                        </label>
-
-                    </div>
-
-
-                    <div className={styles.StepButtons}>
-
-                        <Link
-                            to={`/dogs/${animal.id}`}
-                            className={styles.SecondaryButton}
-                        >
-                            Cancel
-                        </Link>
-
-                        <button
-                            type="button"
-                            className={styles.PrimaryButton}
-                            onClick={nextStep}
-                        >
-                            Next
-                            <LuArrowRight />
-                        </button>
-
-                    </div>
-
-                </div>
+                <AboutYouStep
+                    animal={animal}
+                    formData={formData}
+                    handleChange={handleChange}
+                    nextStep={nextStep}
+                />
 
             )}
 
 
+            {/* Step 2 - Your Home */}
             {currentStep === 2 && (
 
-                <div className={styles.FormStep}>
-
-                    <div className={styles.StepHeading}>
-
-                        <h1>Your Home</h1>
-
-                        <p>
-                            Tell us about your home and your
-                            living situation.
-                        </p>
-
-                    </div>
-
-
-                    <div className={styles.FormGrid}>
-
-                        <div>
-
-                            <label>
-
-                                Housing Type *
-
-                                <select
-                                    name="housingType"
-                                    value={formData.housingType}
-                                    onChange={handleChange}
-                                >
-
-                                    <option value="">
-                                        Select housing
-                                    </option>
-
-                                    <option value="Apartment">
-                                        Apartment
-                                    </option>
-
-                                    <option value="House">
-                                        House
-                                    </option>
-
-                                    <option value="Other">
-                                        Other
-                                    </option>
-
-                                </select>
-
-                            </label>
-
-
-                            <label className={styles.CheckboxLabel}>
-
-                                <input
-                                    type="checkbox"
-                                    name="hasGarden"
-                                    checked={formData.hasGarden}
-                                    onChange={handleChange}
-                                />
-
-                                I have access to a garden
-
-                            </label>
-
-
-                            <label>
-
-                                Household Members *
-
-                                <input
-                                    type="text"
-                                    name="householdMembers"
-                                    placeholder="Example: 2 adults"
-                                    value={formData.householdMembers}
-                                    onChange={handleChange}
-                                />
-
-                            </label>
-
-
-                            <label className={styles.CheckboxLabel}>
-
-                                <input
-                                    type="checkbox"
-                                    name="hasOtherPets"
-                                    checked={formData.hasOtherPets}
-                                    onChange={handleChange}
-                                />
-
-                                I have other pets
-
-                            </label>
-
-                        </div>
-
-
-                        <div>
-
-                            <label>
-
-                                Describe your work situation *
-
-                                <textarea
-                                    name="workSituation"
-                                    placeholder="Write here..."
-                                    value={formData.workSituation}
-                                    onChange={handleChange}
-                                    rows="5"
-                                />
-
-                            </label>
-
-
-                            <label>
-
-                                Tell us about your home
-
-                                <textarea
-                                    name="notes"
-                                    placeholder="Write here..."
-                                    value={formData.notes}
-                                    onChange={handleChange}
-                                    rows="5"
-                                />
-
-                            </label>
-
-                        </div>
-
-                    </div>
-
-
-                    <div className={styles.StepButtons}>
-
-                        <button
-                            type="button"
-                            className={styles.SecondaryButton}
-                            onClick={previousStep}
-                        >
-                            <LuArrowLeft />
-                            Back
-                        </button>
-
-                        <button
-                            type="button"
-                            className={styles.PrimaryButton}
-                            onClick={nextStep}
-                        >
-                            Next
-                            <LuArrowRight />
-                        </button>
-
-                    </div>
-
-                </div>
+                <YourHomeStep
+                    formData={formData}
+                    handleChange={handleChange}
+                    previousStep={previousStep}
+                    nextStep={nextStep}
+                />
 
             )}
 
 
+            {/* Step 3 - Experience */}
             {currentStep === 3 && (
 
-                <div className={styles.FormStep}>
-
-                    <div className={styles.StepHeading}>
-
-                        <h1>Your Experience with Dogs</h1>
-
-                        <p>
-                            Tell us about your experience and
-                            expectations.
-                        </p>
-
-                    </div>
-
-
-                    <label>
-
-                        Tell us about your experience with dogs *
-
-                        <textarea
-                            name="experience"
-                            placeholder="Write here..."
-                            value={formData.experience}
-                            onChange={handleChange}
-                            rows="7"
-                        />
-
-                    </label>
-
-
-                    <div className={styles.StepButtons}>
-
-                        <button
-                            type="button"
-                            className={styles.SecondaryButton}
-                            onClick={previousStep}
-                        >
-                            <LuArrowLeft />
-                            Back
-                        </button>
-
-                        <button
-                            type="button"
-                            className={styles.PrimaryButton}
-                            onClick={nextStep}
-                        >
-                            Next
-                            <LuArrowRight />
-                        </button>
-
-                    </div>
-
-                </div>
+                <ExperienceStep
+                    formData={formData}
+                    handleChange={handleChange}
+                    previousStep={previousStep}
+                    nextStep={nextStep}
+                />
 
             )}
 
 
+            {/* Step 4 - Confirm */}
             {currentStep === 4 && (
 
-                <form
-                    className={styles.FormStep}
-                    onSubmit={handleSubmit}
-                >
-
-                    <div className={styles.StepHeading}>
-
-                        <h1>Confirm Your Application</h1>
-
-                        <p>
-                            Check that your information is correct
-                            before submitting.
-                        </p>
-
-                    </div>
-
-
-                    <div className={styles.ConfirmSection}>
-
-                        <h3>About You</h3>
-
-                        <p>
-                            {formData.firstName} {formData.lastName}
-                        </p>
-
-                        <p>{formData.email}</p>
-
-                        <p>{formData.phone}</p>
-
-                    </div>
-
-
-                    <div className={styles.ConfirmSection}>
-
-                        <h3>Your Home</h3>
-
-                        <p>
-                            Housing: {formData.housingType}
-                        </p>
-
-                        <p>
-                            Household: {formData.householdMembers}
-                        </p>
-
-                        <p>
-                            Garden: {formData.hasGarden ? "Yes" : "No"}
-                        </p>
-
-                        <p>
-                            Other pets: {formData.hasOtherPets ? "Yes" : "No"}
-                        </p>
-
-                        <p>
-                            Work situation: {formData.workSituation}
-                        </p>
-
-                    </div>
-
-
-                    <div className={styles.ConfirmSection}>
-
-                        <h3>Experience</h3>
-
-                        <p>{formData.experience}</p>
-
-                    </div>
-
-
-                    {formData.notes && (
-
-                        <div className={styles.ConfirmSection}>
-
-                            <h3>Additional Information</h3>
-
-                            <p>{formData.notes}</p>
-
-                        </div>
-
-                    )}
-
-
-                    <label className={styles.CheckboxLabel}>
-
-                        <input
-                            type="checkbox"
-                            name="informationCorrect"
-                            checked={formData.informationCorrect}
-                            onChange={handleChange}
-                        />
-
-                        I confirm that all information is correct.
-
-                    </label>
-
-
-                    <div className={styles.StepButtons}>
-
-                        <button
-                            type="button"
-                            className={styles.SecondaryButton}
-                            onClick={previousStep}
-                        >
-                            <LuArrowLeft />
-                            Back
-                        </button>
-
-
-                        <button
-                            type="submit"
-                            className={styles.PrimaryButton}
-                            disabled={
-                                !formData.informationCorrect ||
-                                isSubmitting
-                            }
-                        >
-                            {isSubmitting
-                                ? "Submitting..."
-                                : "Submit Application"
-                            }
-                        </button>
-
-                    </div>
-
-                </form>
+                <ConfirmStep
+                    formData={formData}
+                    handleChange={handleChange}
+                    previousStep={previousStep}
+                    handleSubmit={handleSubmit}
+                    isSubmitting={isSubmitting}
+                />
 
             )}
 
         </div>
-
     );
-
 }

@@ -1,0 +1,106 @@
+/* Dog header */
+
+.dogHeader {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: clamp(30px, 5vw, 60px);
+}
+
+.dogImageContainer {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-M);
+}
+
+.dogImage {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.dogInformation {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 3vw, 30px);
+}
+
+.nameContainer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.nameContainer h1 {
+    margin: 0;
+    font-size: clamp(28px, 4vw, 45px);
+    color: var(--color-text);
+}
+
+
+/* Dog facts */
+
+.dogFacts {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(14px, 2vw, 20px);
+    font-family: var(--font-family-Arial);
+}
+
+.dogFacts div {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    align-items: center;
+    gap: clamp(10px, 1.5vw, 18px);
+}
+
+.dogFacts svg {
+    width: 21px;
+    height: 21px;
+    color: var(--color-primary);
+    stroke-width: 1.8;
+    flex-shrink: 0;
+}
+
+.dogFacts span {
+    font-size: clamp(13px, 1.2vw, 16px);
+    color: var(--color-text);
+}
+
+
+/* Adoption button */
+
+.adoptionButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: clamp(11px, 1.5vw, 14px);
+    box-sizing: border-box;
+    background-color: var(--color-primary);
+    color: var(--color-text-white);
+    border-radius: var(--radius-M);
+    font-family: var(--font-family-Arial);
+    font-size: clamp(13px, 1.2vw, 16px);
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.adoptionButton:hover {
+    background-color: var(--color-primary-hover);
+    transform: scale(1.01);
+}
+
+
+/* Media query mobile */
+
+@media (max-width: 700px) {
+
+    .dogHeader {
+        grid-template-columns: 1fr;
+    }
+
+}

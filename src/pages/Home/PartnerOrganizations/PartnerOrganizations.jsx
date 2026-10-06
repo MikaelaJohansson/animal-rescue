@@ -41,9 +41,7 @@ export default function PartnerOrganizations() {
 
                     <h3>Hundar Utan Hem</h3>
 
-                    <p>
-                        Works for homeless dogs and supports shelters in Sweden and abroad.
-                    </p>
+                    <p> Works for homeless dogs and supports shelters in Sweden and abroad. </p>
 
                     <a
                         href="https://hundarutanhem.se/"
@@ -66,9 +64,7 @@ export default function PartnerOrganizations() {
 
                     <h3>WWF</h3>
 
-                    <p>
-                      Protects animals and nature for a brighter future.
-                    </p>
+                    <p>  Protects animals and nature for a brighter future. </p>
 
                     <a
                         href="https://www.wwf.se/"

@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import animalRescueLogoBlack from "../../assets/animalRescueLogoBlack.png";
-import { Link } from "react-router-dom";
 
 export default function Navbar() {
 
@@ -23,21 +23,13 @@ export default function Navbar() {
 
                 <ul>
 
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
+                    <li> <Link to="/">Home</Link> </li>
 
-                    <li>
-                        <Link to="/dogs">Our dogs</Link>
-                    </li>
+                    <li>  <Link to="/dogs">Our dogs</Link> </li>
 
-                    <li>
-                        <Link to="/contact">Contact</Link>
-                    </li>
+                    <li> <Link to="/contact">Contact</Link> </li>
 
-                    <li>
-                        <Link to="/about">About</Link>
-                    </li>
+                    <li> <Link to="/about">About</Link> </li>
 
                 </ul>
 

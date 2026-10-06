@@ -1,0 +1,80 @@
+/* Project workflow */
+
+.projectFlow {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.projectFlowHeading {
+    max-width: 750px;
+    margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+}
+
+.projectFlowSmallHeading {
+    margin: 0 0 0.8rem;
+    color: var(--color-primary);
+    font-family: var(--font-family-Arial);
+    font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.projectFlowHeading h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.projectFlowHeading p {
+    margin: 0;
+    font-family: var(--font-family-Arial);
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    line-height: 1.7;
+}
+
+
+/* Project workflow cards */
+
+.projectFlowGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
+}
+
+.projectFlowCard {
+    position: relative;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    border-radius: var(--radius-M);
+    background-color: var(--color-text-white);
+    box-shadow: 1px 1px 10px var(--color-shadow);
+}
+
+.projectFlowCard svg {
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.projectFlowCard span {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: var(--color-primary);
+    font-family: var(--font-family-Arial);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: bold;
+    opacity: 0.4;
+}
+
+.projectFlowCard h3 {
+    margin: 0 0 0.8rem;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+}
+
+.projectFlowCard p {
+    margin: 0;
+    font-family: var(--font-family-Arial);
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    line-height: 1.6;
+}

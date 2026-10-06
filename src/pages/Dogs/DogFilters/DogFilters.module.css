@@ -1,13 +1,10 @@
 .MainContainerDogFilters {
     width: 90%;
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-
     gap: clamp(8px, 1.5vw, 16px);
-
     margin: clamp(20px, 3vw, 35px) auto;
 }
 
@@ -15,19 +12,13 @@
 .MainContainerDogFilters input,
 .MainContainerDogFilters select {
     height: clamp(38px, 4vw, 46px);
-
     padding: 0 clamp(10px, 1.5vw, 16px);
-
     background-color: var(--color-background-topbar);
-
     border: 1px solid #d9d9d9;
     border-radius: var(--radius-M);
-
     font-family: var(--font-family-Arial);
     font-size: clamp(12px, 1vw, 15px);
-
     color: var(--color-text);
-
     box-sizing: border-box;
 }
 
@@ -41,7 +32,6 @@
 .MainContainerDogFilters select {
     flex: 1 1 120px;
     max-width: 170px;
-
     cursor: pointer;
 }
 

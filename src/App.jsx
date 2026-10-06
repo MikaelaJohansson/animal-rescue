@@ -8,53 +8,59 @@ import AdoptionApplication from "./pages/AdoptionApplication/AdoptionApplication
 import About from "./pages/About/About";
 import AdoptionProcess from "./pages/AdoptionProcess/AdoptionProcess";
 import Contact from "./pages/Contact/Contact";
-
+import "./App.css";
 
 function App() {
 
     return (
-        <main>
+        <div className="app">
 
+            {/* Global navigation */}
             <Navbar />
 
-            <Routes>
+            {/* Page content */}
+            <main className="mainContent">
 
-                <Route path="/" element={<Home />} />
+                <Routes>
 
-                <Route path="/about" element={<About />} />
+                    <Route path="/" element={<Home />} />
 
-                <Route
-                    path="/adoption-process"
-                    element={<AdoptionProcess />}
-                />
+                    <Route path="/about" element={<About />} />
 
-                <Route
-                    path="/contact"
-                    element={<Contact />}
-                />
+                    <Route
+                        path="/adoption-process"
+                        element={<AdoptionProcess />}
+                    />
 
-                <Route
-                    path="/dogs"
-                    element={<Dogs />}
-                />
+                    <Route
+                        path="/contact"
+                        element={<Contact />}
+                    />
 
-                <Route
-                    path="/dogs/:dogId"
-                    element={<DogDetails />}
-                />
+                    <Route
+                        path="/dogs"
+                        element={<Dogs />}
+                    />
 
-                <Route
-                    path="/dogs/:dogId/adopt"
-                    element={<AdoptionApplication />}
-                />
+                    <Route
+                        path="/dogs/:dogId"
+                        element={<DogDetails />}
+                    />
 
-            </Routes>
+                    <Route
+                        path="/dogs/:dogId/adopt"
+                        element={<AdoptionApplication />}
+                    />
 
+                </Routes>
+
+            </main>
+
+            {/* Global footer */}
             <Footer />
 
-        </main>
+        </div>
     );
 }
-
 
 export default App;

@@ -1,15 +1,10 @@
+import { Link } from "react-router-dom";
 import styles from "./DogCards.module.css";
 import animalImages from "../../../Data/animalImages";
-import { Link } from "react-router-dom";
 import StatusBadge from "../../../components/StatusBadge/StatusBadge";
 
 
 export default function DogCards({ animals }) {
-
-
-
-
-
 
     return (
 
@@ -21,7 +16,11 @@ export default function DogCards({ animals }) {
 
                     <Link className={styles.DogCardsContainer} key={animal.id} to={`/dogs/${animal.id}`}>
 
-                        <img className={styles.ContainerDogCardsImg} src={animalImages[animal.image]} alt={animal.name} loading="lazy" />
+                        <img className={styles.ContainerDogCardsImg} 
+                            src={animalImages[animal.image]} 
+                            alt={animal.name} 
+                            loading="lazy" 
+                        />
 
                         <div className={styles.DogCardsContent}>
 
@@ -35,9 +34,7 @@ export default function DogCards({ animals }) {
 
                         <div className={styles.DogCardsContentStatus}>
                             <StatusBadge  status={animal.status}></StatusBadge>
-                        </div>
-
-                        
+                        </div>                   
 
                     </Link>
 

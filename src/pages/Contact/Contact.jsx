@@ -1,31 +1,12 @@
 import { useState } from "react";
-import {
-    FaEnvelope,
-    FaLocationDot,
-    FaLinkedin,
-    FaGithub
-} from "react-icons/fa6";
+import { FaLocationDot, FaLinkedin, FaGithub } from "react-icons/fa6";
 import styles from "./Contact.module.css";
 
 export default function Contact() {
 
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: ""
-    });
-
-
-    function handleChange(event) {
-
-        const { name, value } = event.target;
-
-        setFormData({
-            ...formData,
-            [name]: value
-        });
-
-    }
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
 
 
     function handleSubmit(event) {
@@ -33,29 +14,26 @@ export default function Contact() {
         event.preventDefault();
 
         const subject = encodeURIComponent(
-            `Animal Rescue portfolio - Message from ${formData.name}`
+            "Animal Rescue portfolio - Message from " + name
         );
 
         const body = encodeURIComponent(
-            `Name: ${formData.name}\n` +
-            `Email: ${formData.email}\n\n` +
-            `Message:\n${formData.message}`
+            "Name: " + name +
+            "\nEmail: " + email +
+            "\n\nMessage:\n" + message
         );
 
         const gmailUrl =
-            `https://mail.google.com/mail/?view=cm&fs=1` +
-            `&to=mikaela.johansson87@gmail.com` +
-            `&su=${subject}` +
-            `&body=${body}`;
+            "https://mail.google.com/mail/?view=cm&fs=1" +
+            "&to=mikaela.johansson87@gmail.com" +
+            "&su=" + subject +
+            "&body=" + body;
 
         window.open(gmailUrl, "_blank");
 
-        setFormData({
-            name: "",
-            email: "",
-            message: ""
-        });
-
+        setName("");
+        setEmail("");
+        setMessage("");
     }
 
 
@@ -64,7 +42,6 @@ export default function Contact() {
         <main className={styles.mainContainerContact}>
 
             <div className={styles.contactContent}>
-
 
                 {/* Contact information */}
 
@@ -80,7 +57,6 @@ export default function Contact() {
                         </p>
 
                     </div>
-
 
                     <div className={styles.contactDetails}>
 
@@ -144,9 +120,8 @@ export default function Contact() {
 
                             <input
                                 type="text"
-                                name="name"
-                                value={formData.name}
-                                onChange={handleChange}
+                                value={name}
+                                onChange={(event) => setName(event.target.value)}
                                 required
                             />
 
@@ -159,9 +134,8 @@ export default function Contact() {
 
                             <input
                                 type="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
+                                value={email}
+                                onChange={(event) => setEmail(event.target.value)}
                                 required
                             />
 
@@ -173,9 +147,8 @@ export default function Contact() {
                             Your Message *
 
                             <textarea
-                                name="message"
-                                value={formData.message}
-                                onChange={handleChange}
+                                value={message}
+                                onChange={(event) => setMessage(event.target.value)}
                                 required
                             />
 

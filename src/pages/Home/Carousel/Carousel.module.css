@@ -10,7 +10,6 @@
     margin-bottom: clamp(1rem, 3vw, 2rem);
 }
 
-
 .cards {
     display: flex;
     flex-direction: row;
@@ -25,19 +24,13 @@
     flex: 1;
     min-width: 0;
     padding-bottom: 1rem;
-
     background-color: var(--color-text-white);
-
     border: 2px solid transparent;
     border-radius: var(--radius-M);
-
     box-shadow: 1px 1px 10px var(--color-shadow);
-
     overflow: hidden;
-
     color: inherit;
     text-decoration: none;
-
     cursor: pointer;
 
     transition:
@@ -46,15 +39,11 @@
         border-color 0.2s ease;
 }
 
-
 .card:hover {
     transform: translateY(-3px);
-
     border-color: var(--color-primary);
-
     box-shadow: 1px 4px 14px var(--color-shadow);
 }
-
 
 .card:focus-visible {
     outline: 3px solid var(--color-primary);
@@ -66,18 +55,13 @@
 
 .card img {
     display: block;
-
     width: 100%;
     aspect-ratio: 1 / 1;
-
     object-fit: cover;
     object-position: center;
-
     border-radius: var(--radius-S);
-
     transition: transform 0.2s ease;
 }
-
 
 .card:hover img {
     transform: scale(1.02);
@@ -97,7 +81,6 @@
 
     transition: color 0.2s ease;
 }
-
 
 .card:hover h3 {
     color: var(--color-primary);
@@ -135,15 +118,11 @@
 
     min-width: clamp(30px, 4vw, 40px);
     height: clamp(35px, 4vw, 40px);
-
     border: none;
     border-radius: 50%;
-
     background-color: var(--color-primary);
     color: var(--color-text-white);
-
     font-size: clamp(18px, 2vw, 22px);
-
     cursor: pointer;
 
     transition:
@@ -154,7 +133,6 @@
 
 .mainContainerCarousel button:hover {
     background-color: var(--color-primary-hover);
-
     transform: scale(1.08);
 }
 
@@ -169,7 +147,6 @@
     }
 
 }
-
 
 /* Media query mobile */
 

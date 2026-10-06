@@ -17,10 +17,7 @@ export default function Home() {
 
         const animalsCollection = collection(db, "animals");
 
-        const unsubscribe = onSnapshot(
-            animalsCollection,
-
-            (querySnapshot) => {
+        const unsubscribe = onSnapshot( animalsCollection, (querySnapshot) => {
 
                 const animalsData = querySnapshot.docs.map((doc) => ({
                     id: doc.id,
@@ -31,31 +28,24 @@ export default function Home() {
 
             },
 
-            (error) => {
-
-                console.error("Error loading dogs:", error);
-
-            }
+            (error) => { console.error("Error loading dogs:", error); }
         );
 
 
-        return () => {
-            unsubscribe();
-        };
+        return () => { unsubscribe(); };
 
     }, []);
 
 
     return (
+
         <div className={styles.mainContainerHome}>
 
             <header className={styles.containerHeaderHome}>
 
                 <div className={styles.containerHeaderText}>
 
-                    <h1>
-                        A safer life <br /> for more Dogs
-                    </h1>
+                    <h1> A safer life <br /> for more Dogs </h1>
 
                     <p>
                         We rescue, care for, and rehome dogs in need of a new home. <br />
@@ -67,17 +57,11 @@ export default function Home() {
 
                 <div className={styles.containerHeaderHomeButton}>
 
-                    <Link
-                        to="/dogs"
-                        className={styles.containerHeaderHomeButtonMeetDog}
-                    >
+                    <Link to="/dogs" className={styles.containerHeaderHomeButtonMeetDog} >
                         Dogs for Adoption
                     </Link>
 
-                    <Link
-                        to="/adoption-process"
-                        className={styles.containerHeaderHomeButtonApply}
-                    >
+                    <Link to="/adoption-process" className={styles.containerHeaderHomeButtonApply}  >
                         How Adoption Works
                     </Link>
 
@@ -117,23 +101,15 @@ export default function Home() {
 
             <section className={styles.containerAllDogs}>
 
-                <div>
-                    <h1>Some of Our Dogs 🐾</h1>
-                </div>
+                <div>  <h1>Some of Our Dogs 🐾</h1> </div>
 
                 <Carousel animals={animals} />
 
             </section>
 
+            <section> <SupportSection /> </section>
 
-            <section>
-                <SupportSection />
-            </section>
-
-
-            <section>
-                <PartnerOrganizations />
-            </section>
+            <section> <PartnerOrganizations /> </section>
 
         </div>
     );
