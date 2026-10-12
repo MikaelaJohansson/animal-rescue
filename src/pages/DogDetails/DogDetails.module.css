@@ -15,7 +15,6 @@
     align-items: center;
     gap: 8px;
     margin-bottom: clamp(20px, 3vw, 30px);
-    font-family: var(--font-family-Arial);
     font-size: clamp(12px, 1vw, 14px);
     color: var(--color-text);
 }
@@ -39,5 +38,4 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: var(--font-family-Arial);
 }

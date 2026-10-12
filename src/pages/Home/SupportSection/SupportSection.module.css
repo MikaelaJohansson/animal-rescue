@@ -61,7 +61,6 @@
 
 .supportContent h1 {
     font-size: clamp(28px, 3vw, 46px);
-    font-family: var(--font-family-Arial);
     margin: 0 0 clamp(8px, 1vw, 12px) 0;
     color: var(--color-sidebar-hover);
 }

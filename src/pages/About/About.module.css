@@ -50,7 +50,6 @@
     border: 1px solid var(--color-text-white);
     border-radius: 50px;
     color: var(--color-text-white);
-    font-family: var(--font-family-Arial);
     font-size: clamp(0.8rem, 1.2vw, 1rem);
 }
 
@@ -71,7 +70,6 @@
 
 .projectLinks p {
     margin: 0 auto clamp(1.5rem, 3vw, 2rem);
-    font-family: var(--font-family-Arial);
     font-size: clamp(0.95rem, 1.5vw, 1.1rem);
     line-height: 1.7;
 }
@@ -89,7 +87,6 @@
     border-radius: var(--radius-S);
     background-color: var(--color-primary);
     color: var(--color-text-white);
-    font-family: var(--font-family-Arial);
     font-weight: bold;
     text-decoration: none;
     transition: background-color 0.2s ease, transform 0.2s ease;

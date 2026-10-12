@@ -15,7 +15,6 @@
 .projectFlowSmallHeading {
     margin: 0 0 0.8rem;
     color: var(--color-primary);
-    font-family: var(--font-family-Arial);
     font-size: clamp(0.75rem, 1.2vw, 0.95rem);
     font-weight: bold;
     letter-spacing: 2px;
@@ -28,7 +27,6 @@
 
 .projectFlowHeading p {
     margin: 0;
-    font-family: var(--font-family-Arial);
     font-size: clamp(0.95rem, 1.5vw, 1.1rem);
     line-height: 1.7;
 }
@@ -61,7 +59,6 @@
     top: 1.5rem;
     right: 1.5rem;
     color: var(--color-primary);
-    font-family: var(--font-family-Arial);
     font-size: clamp(1.2rem, 2vw, 1.5rem);
     font-weight: bold;
     opacity: 0.4;
@@ -74,7 +71,6 @@
 
 .projectFlowCard p {
     margin: 0;
-    font-family: var(--font-family-Arial);
     font-size: clamp(0.9rem, 1.2vw, 1rem);
     line-height: 1.6;
 }

@@ -4,7 +4,6 @@
     width: 100%;
     background-color: var(--color-sidebar);
     color: var(--color-text-white);
-    font-family: var(--font-family-Arial);
     padding: clamp(0.75rem, 2vw, 1.5rem);
     box-sizing: border-box;
     overflow: hidden;
@@ -91,7 +90,7 @@
 
 
 .containerFooter a:visited {
-    color: var(--color-text-muted);
+    color: var(--color-primary-light);
 }
 
 

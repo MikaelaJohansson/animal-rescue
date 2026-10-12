@@ -30,7 +30,6 @@
 .smallHeading {
     margin: 0 0 0.8rem;
     color: var(--color-primary);
-    font-family: var(--font-family-Arial);
     font-size: clamp(0.75rem, 1.2vw, 0.95rem);
     font-weight: bold;
     letter-spacing: 2px;
@@ -46,7 +45,6 @@
 .heroText {
     max-width: 570px;
     margin-bottom: clamp(1.5rem, 3vw, 2rem);
-    font-family: var(--font-family-Arial);
     font-size: clamp(1rem, 1.5vw, 1.2rem);
     line-height: 1.7;
 }
@@ -59,7 +57,6 @@
     border-radius: var(--radius-S);
     background-color: var(--color-primary);
     color: var(--color-text-white);
-    font-family: var(--font-family-Arial);
     font-weight: bold;
     text-decoration: none;
     transition:

@@ -1,11 +1,16 @@
+
 .mainContainerContact {
     width: 100%;
-    min-height: 80vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: clamp(2rem, 6vw, 6rem);
     background-color: var(--color-background);
+    background-image: url("../../assets/dogWallyBackground.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     box-sizing: border-box;
 }
 
@@ -16,7 +21,6 @@
     grid-template-columns: 1fr 1fr;
     gap: clamp(2rem, 6vw, 6rem);
 }
-
 
 /* Contact information */
 
@@ -65,7 +69,6 @@
     color: var(--color-primary);
 }
 
-
 /* Social links */
 
 .socialContainer h2 {
@@ -85,7 +88,6 @@
     justify-content: center;
     color: var(--color-text);
     font-size: clamp(2rem, 3vw, 2.5rem);
-
     transition:
         color 0.2s ease,
         transform 0.2s ease;
@@ -102,7 +104,6 @@
     color: var(--color-text);
     opacity: 0.7;
 }
-
 
 /* Contact form */
 
@@ -135,7 +136,6 @@
     padding: 0.9rem;
     border: 1px solid var(--color-shadow);
     border-radius: var(--radius-S);
-    font-family: inherit;
     font-size: 1rem;
     box-sizing: border-box;
     outline: none;
@@ -162,7 +162,6 @@
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-
     transition:
         background-color 0.2s ease,
         transform 0.2s ease;
@@ -172,7 +171,6 @@
     background-color: var(--color-primary-hover);
     transform: translateY(-1px);
 }
-
 
 /* Success message */
 
@@ -194,7 +192,6 @@
 .successMessage p {
     color: var(--color-text);
 }
-
 
 /* Media query Mobile */
 

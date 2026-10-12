@@ -47,7 +47,6 @@
     display: flex;
     flex-direction: column;
     gap: clamp(14px, 2vw, 20px);
-    font-family: var(--font-family-Arial);
 }
 
 .dogFacts div {
@@ -83,7 +82,6 @@
     background-color: var(--color-primary);
     color: var(--color-text-white);
     border-radius: var(--radius-M);
-    font-family: var(--font-family-Arial);
     font-size: clamp(13px, 1.2vw, 16px);
     text-decoration: none;
     transition: background-color 0.2s ease, transform 0.2s ease;

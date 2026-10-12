@@ -39,7 +39,6 @@
     padding: clamp(0.01rem, 1vw, 0.5rem);
     padding-left: 1rem;
     color: var(--color-dark-green-cards-text);
-    font-family: var(--font-family-Arial);
 }
 
 

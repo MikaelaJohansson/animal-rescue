@@ -5,7 +5,6 @@
     max-width: 950px;
     margin: 0 auto;
     padding: clamp(30px, 5vw, 60px) 0;
-    font-family: var(--font-family-Arial);
 }
 
 
@@ -92,7 +91,6 @@
     background-color: white;
     border: 1px solid #ccc;
     border-radius: var(--radius-M);
-    font-family: var(--font-family-Arial);
     font-size: 14px;
 }
 
@@ -143,7 +141,6 @@
     padding: 12px 20px;
     box-sizing: border-box;
     border-radius: var(--radius-M);
-    font-family: var(--font-family-Arial);
     font-size: 15px;
     text-decoration: none;
     cursor: pointer;
@@ -214,7 +211,6 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    font-family: var(--font-family-Arial);
 }
 
 .CompleteIcon {
@@ -255,7 +251,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: var(--font-family-Arial);
 }
 
 

@@ -46,7 +46,6 @@
 .stepNumber {
     margin-bottom: 0.4rem;
     color: var(--color-primary);
-    font-family: var(--font-family-Arial);
     font-size: clamp(0.7rem, 1vw, 0.85rem);
     font-weight: bold;
     letter-spacing: 1px;
@@ -60,7 +59,6 @@
 .processStep p {
     max-width: 230px;
     margin: 0;
-    font-family: var(--font-family-Arial);
     font-size: clamp(0.85rem, 1.2vw, 1rem);
     line-height: 1.6;
 }
