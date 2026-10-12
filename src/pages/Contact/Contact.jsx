@@ -1,4 +1,6 @@
+
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { FaLocationDot, FaLinkedin, FaGithub } from "react-icons/fa6";
 import styles from "./Contact.module.css";
 
@@ -7,35 +9,53 @@ export default function Contact() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
+    const [status, setStatus] = useState("");
+    const [isSending, setIsSending] = useState(false);
 
-
-    function handleSubmit(event) {
+    // Sends the contact form directly to EmailJS
+    async function handleSubmit(event) {
 
         event.preventDefault();
 
-        const subject = encodeURIComponent(
-            "Animal Rescue portfolio - Message from " + name
-        );
+        setIsSending(true);
+        setStatus("");
 
-        const body = encodeURIComponent(
-            "Name: " + name +
-            "\nEmail: " + email +
-            "\n\nMessage:\n" + message
-        );
+        const templateParams = {
+            name: name,
+            email: email,
+            message: message,
+            subject: "Animal Rescue portfolio - Message from " + name,
+            from_name: name,
+            reply_to: email
+        };
 
-        const gmailUrl =
-            "https://mail.google.com/mail/?view=cm&fs=1" +
-            "&to=mikaela.johansson87@gmail.com" +
-            "&su=" + subject +
-            "&body=" + body;
+        try {
 
-        window.open(gmailUrl, "_blank");
+            await emailjs.send(
+                "service_0tm1ts1",
+                "template_4j5uw7r",
+                templateParams,
+                {
+                    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+                }
+            );
 
-        setName("");
-        setEmail("");
-        setMessage("");
+            setStatus("Your message has been sent successfully!");
+            setName("");
+            setEmail("");
+            setMessage("");
+
+        } catch (error) {
+
+            console.error("EmailJS error:", error);
+            setStatus("Something went wrong. Please try again.");
+
+        } finally {
+
+            setIsSending(false);
+
+        }
     }
-
 
     return (
 
@@ -70,7 +90,6 @@ export default function Contact() {
 
                     </div>
 
-
                     <div className={styles.socialContainer}>
 
                         <h2>Find me online</h2>
@@ -86,7 +105,6 @@ export default function Contact() {
                                 <FaLinkedin />
                             </a>
 
-
                             <a
                                 href="https://github.com/MikaelaJohansson"
                                 target="_blank"
@@ -100,13 +118,11 @@ export default function Contact() {
 
                     </div>
 
-
                     <p className={styles.demoText}>
                         Animal Rescue is a portfolio demonstration project.
                     </p>
 
                 </section>
-
 
                 {/* Contact form */}
 
@@ -127,7 +143,6 @@ export default function Contact() {
 
                         </label>
 
-
                         <label>
 
                             Your Email *
@@ -141,7 +156,6 @@ export default function Contact() {
 
                         </label>
 
-
                         <label>
 
                             Your Message *
@@ -154,10 +168,15 @@ export default function Contact() {
 
                         </label>
 
-
-                        <button type="submit">
-                            Send Message
+                        <button type="submit" disabled={isSending}>
+                            {isSending ? "Sending..." : "Send Message"}
                         </button>
+
+                        {status && (
+                            <p role="status">
+                                {status}
+                            </p>
+                        )}
 
                     </form>
 
