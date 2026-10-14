@@ -687,7 +687,8 @@ npm run dev
 
 ### Deployment
 
-- 🔄 Ready for Firebase Hosting deployment
+- ✅ Deployed with Firebase Hosting
+- 🔄 Automatic deployment via GitHub Actions
 
 ### Connected Project
 
